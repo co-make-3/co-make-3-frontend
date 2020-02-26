@@ -1,2 +1,2 @@
 # co-make-frontend
-backend api
+frontend UI
