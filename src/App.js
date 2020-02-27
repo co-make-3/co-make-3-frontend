@@ -2,6 +2,10 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 
+// Component Imports
+//import Login from './components/Login'
+//import Login from './components/Register'
+
 /**
  * ### Routes - 
  * 1. Login
