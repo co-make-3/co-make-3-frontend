@@ -10,6 +10,11 @@ const LoginForm = ({ touched, errors, ...props }) => {
 
     return (
         <div>
+            <div className="row">
+                <div className="col-12 text-center">
+                    <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
+                </div>
+            </div>
             <h2 className="form-title">Login to your account below</h2>
             <Form>
                 <div className="form-group">
