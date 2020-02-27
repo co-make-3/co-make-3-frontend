@@ -48,25 +48,26 @@ const RegisterForm = ({ touched, errors, ...props }) => {
 }
                 
 export default withFormik({
-    mapPropsToValues: ({email, password}) => ({
+    mapPropsToValues: ({email, name, password, confirmpassword, zipcode}) => ({
         email: email || '',
-        password: password || ''
+        name: name || '',
+        password: password || '',
+        confirmpassword: confirmpassword || '',
+        zipcode: zipcode || ''
     }),
     validationSchema: yup.object().shape({
-        email: yup
-            .string()
-            .email('This email is not valid')
-            .required('An email is required.'),
-        password: yup
-            .string()
-            .required('A password is required.'),
+        email: yup.string().email('This email is not valid').required('An email is required.'),
+        name: yup.string().required('Your name is required.'),
+        password: yup.string().required('A password is required.'),
+        confirmpassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords do not match.').required('These passwords do not match.'),
+        zipcode: yup.string().matches(/^\d{5}$/, 'This zip code is incorrect.').required('Your zip code is required.')
     }),
     handleSubmit: (values, { resetForm, setStatus }) => {
         axios
-            .post('', values)
-            .then(res => {
-                setStatus(res.data)
-                resetForm()
+        .post('', values)
+        .then(res => {
+            setStatus(res.data)
+            resetForm()
         })
         .catch(err => console.log('Axios: ', err.res))
     }
