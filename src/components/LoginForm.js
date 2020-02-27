@@ -18,13 +18,12 @@ const LoginForm = ({ touched, errors, ...props }) => {
             <h2 className="form-title">Login to your account below</h2>
             <Form>
                 <div className="form-group">
-                    <label htmlFor="email">Email address</label>
+                    <label htmlFor="email">Email Address:</label>
                     <Field type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
                 </div>
                 <div class="form-group">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <Field type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                    
                 </div>
                 <div>
                     {touched.password && errors.password && (<div class="form-validation alert alert-danger" role="alert">{errors.password}</div>)}

@@ -3,8 +3,8 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 // Component Imports
-import LoginForm from './components/LoginForm'
-//import RegisterForm from './components/RegisterForm'
+//import LoginForm from './components/LoginForm'
+import RegisterForm from './components/RegisterForm'
 
 /**
  * ### Routes - 
@@ -29,7 +29,7 @@ function App() {
             
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
-                    <LoginForm />
+                    <RegisterForm />
                 </div>
             </div>
         </div>

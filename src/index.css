@@ -42,3 +42,11 @@ input[type=password] {
     width: 300px;
     height: auto;
 }
+
+form button {
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-bottom: 40px;
+}
