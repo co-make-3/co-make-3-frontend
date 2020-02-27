@@ -10,7 +10,7 @@ html {
 }
 
 .form-wrapper {
-    max-width: 500px;
+    max-width: 600px;
 }
 
 form {
@@ -34,5 +34,9 @@ input[type=password] {
 
 .form-title {
     font-size: 3.2rem;
+    margin-bottom: 60px;
+}
+
+.form-logo {
     margin-bottom: 60px;
 }
