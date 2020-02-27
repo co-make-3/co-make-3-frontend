@@ -3,8 +3,8 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 // Component Imports
-//import Login from './components/Login'
-//import Register from './components/Register'
+import LoginForm from './components/LoginForm'
+//import RegisterForm from './components/RegisterForm'
 
 /**
  * ### Routes - 
@@ -19,7 +19,7 @@ import { Route } from 'react-router-dom'
 
 function App() {
     return (
-        <div className="App">
+        <div className="row App">
             <Route path="/login" />
             <Route path="/register" />
             <Route path="/dashboard/:userid" />
@@ -27,7 +27,11 @@ function App() {
             <Route path="/post/:userid" />
             <Route path="/view/:postid" />
             
-            <h1>Hello I'm the App!</h1>
+            <div className="row page-wrapper">
+                <div className="col form-wrapper">
+                    <LoginForm />
+                </div>
+            </div>
         </div>
     )
 }

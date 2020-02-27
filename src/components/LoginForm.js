@@ -6,21 +6,24 @@ import * as yup from 'yup'
 
 
 const LoginForm = ({ touched, errors, ...props }) => {
-    const POST_AUTH_API = '' // Add backend auth api for login
     const [status, setStatus] = useState([])
 
     return (
         <div>
+            <h2 className="form-title">Login to your account below</h2>
             <Form>
                 <div className="form-group">
                     <label htmlFor="exampleInputEmail1">Email address</label>
                     <Field type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
-                    {touched.name && errors.name && (<div class="alert alert-danger" role="alert">{errors.email}</div>)}
                 </div>
                 <div class="form-group">
                     <label htmlFor="password">Password</label>
                     <Field type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                    {touched.email && errors.email && (<div class="alert alert-danger" role="alert">{errors.email}</div>)}
+                    
+                </div>
+                <div>
+                    {touched.password && errors.password && (<div class="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
+                    {touched.email && errors.email && (<div class="form-validation alert alert-danger" role="alert">{errors.email}</div>)}
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </Form>
@@ -44,7 +47,7 @@ export default withFormik({
     }),
     handleSubmit: (values, { resetForm, setStatus }) => {
         axios
-            .post(POST_AUTH_API, values)
+            .post('', values)
             .then(res => {
                 setStatus(res.data)
                 resetForm()
@@ -52,6 +55,3 @@ export default withFormik({
         .catch(err => console.log('Axios: ', err.res))
     }
 })(LoginForm)
-
-
-//jkhgbljkhblmkjblmjblj
