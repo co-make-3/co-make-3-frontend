@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom'
 
 // Component Imports
 //import Login from './components/Login'
-//import Login from './components/Register'
+//import Register from './components/Register'
 
 /**
  * ### Routes - 
