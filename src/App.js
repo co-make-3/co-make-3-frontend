@@ -1,9 +1,9 @@
 // Package imports
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 
 // Component Imports
-//import LoginForm from './components/LoginForm'
+import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
 
 /**
@@ -20,8 +20,6 @@ import RegisterForm from './components/RegisterForm'
 function App() {
     return (
         <div className="row App">
-            <Route path="/login" />
-            <Route path="/register" />
             <Route path="/dashboard/:userid" />
             <Route path="/dashboard/:userid/activities" />
             <Route path="/post/:userid" />
@@ -29,7 +27,22 @@ function App() {
             
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
-                    <RegisterForm />
+                    <div className="row">
+                        <div className="col-12">
+                            <nav className="comp-nav">
+                                <Link to="/login">Login</Link>
+                                <Link to="/register">Register</Link>
+                            </nav>
+                            <hr />
+                            <Route path="/login" render={renderProps => {
+                                return <LoginForm />
+                            }} />
+                            <Route exact path="/register" render={renderProps => {
+                                return <RegisterForm />
+                            }} />
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
