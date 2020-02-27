@@ -1,5 +1,6 @@
 // Package imports
 import React from 'react'
+import { Route } from 'react-router-dom'
 
 /**
  * ### Routes - 
@@ -13,12 +14,18 @@ import React from 'react'
  */
 
 function App() {
-  return (
-    <div className="App">
-        <h1>Hello I'm the App!</h1>
-        
-    </div>
-  )
+    return (
+        <div className="App">
+            <Route path="/login" />
+            <Route path="/register" />
+            <Route path="/dashboard/:userid" />
+            <Route path="/dashboard/:userid/activities" />
+            <Route path="/post/:userid" />
+            <Route path="/view/:postid" />
+            
+            <h1>Hello I'm the App!</h1>
+        </div>
+    )
 }
 
 export default App
