@@ -3,13 +3,28 @@ import React, { useState, useEffect} from 'react'
 import axios from 'axios'
 import { withFormik, Form, Field } from 'formik'
 import * as yup from 'yup'
+import { Link } from 'react-router-dom'
 
 const RegisterForm = ({ touched, errors, ...props }) => {
     const [status, setStatus] = useState([])
 
     return (
         <div className="text-center">
-            <h2 className="form-title">Register to your account below</h2>
+            <div className="row">
+                <div className="col-12">
+                    <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-12">
+                    <nav className="comp-nav">
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Register</Link>
+                    </nav>
+                    <hr />
+                </div>
+            </div>
+            <h2 className="form-title">Register</h2>
             <Form>
                 <div className="form-group text-left">
                     <label htmlFor="username">Username:</label>

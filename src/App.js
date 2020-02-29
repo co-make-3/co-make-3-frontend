@@ -1,6 +1,6 @@
 // Package imports
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 
 // Component Imports
 import LoginForm from './components/LoginForm'
@@ -24,12 +24,13 @@ function App() {
             <Route path="/dashboard/:userid/activities" />
             <Route path="/post/:userid" />
             <Route path="/view/:postid" />
+            <Redirect exact from="/" to="login" />
             
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
                     <div className="row">
                         <div className="col-12">
-                            <div className="row">
+                            {/* <div className="row">
                                 <div className="col-12">
                                     <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
                                 </div>
@@ -37,20 +38,18 @@ function App() {
                             <div className="row">
                                 <div className="col-12">
                                     <nav className="comp-nav">
-                                        <Link exact to="/">Home</Link>
                                         <Link to="/login">Login</Link>
                                         <Link to="/register">Register</Link>
                                     </nav>
                                     <hr />
                                 </div>
-                            </div>
+                            </div> */}
                             <Route path="/login" render={renderProps => {
                                 return <LoginForm {...renderProps} />
                             }} />
                             <Route exact path="/register" render={renderProps => {
                                 return <RegisterForm {...renderProps} />
                             }} />
-
                         </div>
                     </div>
                 </div>
