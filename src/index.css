@@ -63,3 +63,98 @@ form button {
     padding: 0 20px;
     text-transform: uppercase;
 } 
+
+/* Dashboard Specific Styles */
+
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.dashboard-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    background: rgb(24,24,24);
+    background: linear-gradient(0deg, rgba(24,24,24,1) 0%, rgba(39,39,39,1) 100%);
+    color: #eee;
+    font-size: 2rem;
+}
+
+.dashboard-nav .nav {
+    margin-top: 20px;
+}
+
+.dashboard-nav-wrapper-outer,
+.dashboard-nav-wrapper-inner {
+    height: 100%;
+}
+
+.nav {
+    padding-left: 0px;
+    margin-bottom: 0px;
+    list-style: none;
+}
+
+.nav ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.dashboard-nav .nav li {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard-nav .nav li .active {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.23);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right:20px;
+}
+
+.dashboard-nav .nav li > a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.nav > li, .nav > li > a {
+    position: relative;
+    display: block;
+}
+
+.dashboard-nav .nav a, .table > tbody > tr .td-actions .btn {
+    transition: all 0.15s ease-in 0s;
+}
+
+.dashboard-nav-logo-wrapper {
+    padding: 0 20px 20px 20px;
+    border-bottom: thin solid #525252;
+    top: 0;
+    left: 0;
+}
+
+.logo {
+    width: 220px;
+    height: auto;
+}
+
+.dashboard-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: calc(100vw - 300px);
+    height: inherit;
+}

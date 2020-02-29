@@ -5,6 +5,7 @@ import { Route, Link } from 'react-router-dom'
 // Component Imports
 import LoginForm from './components/LoginForm'
 import RegisterForm from './components/RegisterForm'
+import Dashboard from './components/Dashboard'
 
 /**
  * ### Routes - 
@@ -20,7 +21,9 @@ import RegisterForm from './components/RegisterForm'
 function App() {
     return (
         <div className="row App">
-            <Route path="/dashboard/:userid" />
+            <Route exact path="/dashboard">
+                <Dashboard />
+            </Route>
             <Route path="/dashboard/:userid/activities" />
             <Route path="/post/:userid" />
             <Route path="/view/:postid" />
@@ -40,6 +43,7 @@ function App() {
                                         <Link exact to="/">Home</Link>
                                         <Link to="/login">Login</Link>
                                         <Link to="/register">Register</Link>
+                                        <Link exact to="/dashboard">Dashboard</Link>
                                     </nav>
                                     <hr />
                                 </div>

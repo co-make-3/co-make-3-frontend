@@ -1,15 +1,17 @@
 // Package imports
 import React from 'react'
+import { Route, Link } from 'react-router-dom'
 
 // Component Imports
 import DashNav from './DashboardNav'
+import DashContent from './DashboardContent'
 
 
 function Dashboard() {
     return (
-        <div>
-            <h1>Dashboard</h1>
+        <div className="dashboard-wrapper">
             <DashNav />
+            <DashContent />
         </div>
     )
 }
