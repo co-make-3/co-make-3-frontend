@@ -45,10 +45,10 @@ function App() {
                                 </div>
                             </div>
                             <Route path="/login" render={renderProps => {
-                                return <LoginForm />
+                                return <LoginForm {...renderProps} />
                             }} />
                             <Route exact path="/register" render={renderProps => {
-                                return <RegisterForm />
+                                return <RegisterForm {...renderProps} />
                             }} />
 
                         </div>

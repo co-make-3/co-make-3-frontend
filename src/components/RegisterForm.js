@@ -4,7 +4,6 @@ import axios from 'axios'
 import { withFormik, Form, Field } from 'formik'
 import * as yup from 'yup'
 
-
 const RegisterForm = ({ touched, errors, ...props }) => {
     const [status, setStatus] = useState([])
 
@@ -13,56 +12,72 @@ const RegisterForm = ({ touched, errors, ...props }) => {
             <h2 className="form-title">Register to your account below</h2>
             <Form>
                 <div className="form-group text-left">
-                    <label htmlFor="email">Email Address:</label>
-                    <Field type="email" class="form-control" id="email" name="email" placeholder="Enter email" />
+                    <label htmlFor="username">Username:</label>
+                    <Field type="text" className="form-control" id="username" name="username" placeholder="Enter username" />
                 </div>
                 <div className="form-group text-left">
-                    <label htmlFor="name">Your Name:</label>
-                    <Field type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+                    <label htmlFor="email">Email Address:</label>
+                    <Field type="email" className="form-control" id="email" name="email" placeholder="Enter email" />
                 </div>
-                <div class="form-group text-left">
+                <div className="form-group text-left">
+                    <label htmlFor="firstName">Your first name:</label>
+                    <Field type="text" className="form-control" id="first_name" name="first_name" placeholder="Enter your first name" />
+                </div>
+                <div className="form-group text-left">
+                    <label htmlFor="lastName">Your last name:</label>
+                    <Field type="text" className="form-control" id="last_name" name="last_name" placeholder="Enter your last name" />
+                </div>
+                <div className="form-group text-left">
                     <label htmlFor="password">Password:</label>
-                    <Field type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
-                <div class="form-group text-left">
+                <div className="form-group text-left">
                     <label htmlFor="confirmpassword">Confirm Password:</label>
-                    <Field type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
-                </div>
-                <div class="form-group text-left">
-                    <label htmlFor="zipcode">Zip Code:</label>
-                    <Field type="text" class="form-control" id="zipcode" name="zipcode" placeholder="Zip Code" />
+                    <Field type="password" className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
                 </div>
                 <div>
-                    {touched.password && errors.password && (<div class="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
-                    {touched.email && errors.email && (<div class="form-validation alert alert-danger" role="alert">{errors.email}</div>)}
+                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
+                    {touched.email && errors.email && (<div className="form-validation alert alert-danger" role="alert">{errors.email}</div>)}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </Form>
         </div>
     )
 }
                 
 export default withFormik({
-    mapPropsToValues: ({email, name, password, confirmpassword, zipcode}) => ({
+    mapPropsToValues: ({username, email, first_name, last_name, password, confirmpassword}) => ({
+        username: username || '',
         email: email || '',
-        name: name || '',
+        first_name: first_name || '',
+        last_name: last_name || '',
         password: password || '',
         confirmpassword: confirmpassword || '',
-        zipcode: zipcode || ''
     }),
     validationSchema: yup.object().shape({
+        username: yup.string().required('A username is requried.'),
         email: yup.string().email('This email is not valid').required('An email is required.'),
-        name: yup.string().required('Your name is required.'),
+        first_name: yup.string().required('Your first name is required.'),
+        last_name: yup.string().required('Your last name is required.'),
         password: yup.string().required('A password is required.'),
-        confirmpassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords do not match.').required('These passwords do not match.'),
-        zipcode: yup.string().matches(/^\d{5}$/, 'This zip code is incorrect.').required('Your zip code is required.')
+        confirmpassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords do not match.').required('These passwords do not match.')
     }),
-    handleSubmit: (values, { resetForm, setStatus }) => {
+    handleSubmit: (values, formikBag) => {
+        console.log(values);
+        const {username, email, first_name, last_name, password} = values;
+        const newUser = {
+            username,
+            email,
+            first_name,
+            last_name,
+            password
+        }
         axios
-        .post('', values)
+        .post('http://co-make-3.herokuapp.com/api/auth/register', newUser)
         .then(res => {
-            setStatus(res.data)
-            resetForm()
+            formikBag.setStatus(res.data)
+            formikBag.resetForm()
+            formikBag.props.history.push('/login');
         })
         .catch(err => console.log('Axios: ', err.res))
     }
