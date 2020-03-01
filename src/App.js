@@ -25,7 +25,7 @@ function App() {
             <Route exact path="/dashboard/:userid/activities" />
             <Route exact path="/post/:userid" />
             <Route exact path="/view/:postid" />
-            <Redirect exact from="/" to="login" />
+            <Redirect from="/" to="login" />
 
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
