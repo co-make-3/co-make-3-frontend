@@ -21,12 +21,10 @@ import Dashboard from './components/Dashboard'
 function App() {
     return (
         <div className="row App">
-            <Route exact path="/dashboard">
-                <Dashboard />
-            </Route>
-            <Route path="/dashboard/:userid/activities" />
-            <Route path="/post/:userid" />
-            <Route path="/view/:postid" />
+            <Route path="/dashboard"><Dashboard /></Route>
+            <Route exact path="/dashboard/:userid/activities" />
+            <Route exact path="/post/:userid" />
+            <Route exact path="/view/:postid" />
             
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
@@ -40,10 +38,10 @@ function App() {
                             <div className="row">
                                 <div className="col-12">
                                     <nav className="comp-nav">
-                                        <Link exact to="/">Home</Link>
+                                        <Link to="/">Home</Link>
                                         <Link to="/login">Login</Link>
                                         <Link to="/register">Register</Link>
-                                        <Link exact to="/dashboard">Dashboard</Link>
+                                        <Link to="/dashboard">Dashboard</Link>
                                     </nav>
                                     <hr />
                                 </div>
@@ -51,7 +49,7 @@ function App() {
                             <Route path="/login" render={renderProps => {
                                 return <LoginForm />
                             }} />
-                            <Route exact path="/register" render={renderProps => {
+                            <Route path="/register" render={renderProps => {
                                 return <RegisterForm />
                             }} />
 

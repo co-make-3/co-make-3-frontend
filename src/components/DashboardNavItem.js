@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom'
 function DashboardNavLink(props) {
     return (
         <li>
-            <i class={props.faIcon}></i><Link className={props.isActive} to={props.link}>{props.title}</Link>
+            <Link className={props.isActive} to={props.link}>{props.title}</Link>
         </li>
     )
 }
