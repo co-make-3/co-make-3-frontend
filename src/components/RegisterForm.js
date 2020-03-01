@@ -51,8 +51,12 @@ const RegisterForm = ({ touched, errors, ...props }) => {
                     <Field type="password" className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
                 </div>
                 <div>
-                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
+                    {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{errors.username}</div>)}
                     {touched.email && errors.email && (<div className="form-validation alert alert-danger" role="alert">{errors.email}</div>)}
+                    {touched.firstName && errors.firstName && (<div className="form-validation alert alert-danger" role="alert">{errors.firstName}</div>)}
+                    {touched.lastName && errors.lastName && (<div className="form-validation alert alert-danger" role="alert">{errors.lastName}</div>)}
+                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
+                    {touched.confirmpassword && errors.confirmpassword && (<div className="form-validation alert alert-danger" role="alert">{errors.confirmpassword}</div>)}
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </Form>
