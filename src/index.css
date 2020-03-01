@@ -62,11 +62,7 @@ form button {
     color: #333;
     padding: 0 20px;
     text-transform: uppercase;
-<<<<<<< HEAD
 }
-=======
-} 
->>>>>>> 8651aa7311c4325f0422cb3ce8a596648358b00d
 
 /* Dashboard Specific Styles */
 
@@ -161,8 +157,4 @@ form button {
     padding: 20px;
     width: calc(100vw - 300px);
     height: inherit;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8651aa7311c4325f0422cb3ce8a596648358b00d

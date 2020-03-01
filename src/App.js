@@ -25,11 +25,8 @@ function App() {
             <Route exact path="/dashboard/:userid/activities" />
             <Route exact path="/post/:userid" />
             <Route exact path="/view/:postid" />
-<<<<<<< HEAD
             <Redirect exact from="/" to="login" />
-=======
->>>>>>> 8651aa7311c4325f0422cb3ce8a596648358b00d
-            
+
             <div className="row page-wrapper">
                 <div className="col form-wrapper">
                     <div className="row">
@@ -53,13 +50,8 @@ function App() {
                             <Route path="/login" render={renderProps => {
                                 return <LoginForm {...renderProps} />
                             }} />
-<<<<<<< HEAD
                             <Route exact path="/register" render={renderProps => {
                                 return <RegisterForm {...renderProps} />
-=======
-                            <Route path="/register" render={renderProps => {
-                                return <RegisterForm />
->>>>>>> 8651aa7311c4325f0422cb3ce8a596648358b00d
                             }} />
                         </div>
                     </div>
