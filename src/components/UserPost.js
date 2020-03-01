@@ -3,7 +3,7 @@ import React from 'react'
 
 function UserPost() {
     return (
-        <h1>UserPost</h1>
+        <h1>New Post</h1>
     )
 }
 
