@@ -10,11 +10,7 @@ const RegisterForm = ({ touched, errors, ...props }) => {
 
     return (
         <div className="text-center">
-            <div className="row">
-                <div className="col-12">
-                    <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
-                </div>
-            </div>
+            
            
             <h2 className="form-title">Register</h2>
             <Form>

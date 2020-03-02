@@ -6,7 +6,17 @@ import React from 'react'
 
 function DashboardProfile() {
     return (
-        <h1>Profile</h1>
+        <div className="row">
+            <div className="col-12">
+
+                <div className="row page-title">
+                    <div className="col-12 text-left">
+                        <h1>Profile</h1>     
+                    </div>
+                </div>
+
+            </div>
+        </div>
     )
 }
 
