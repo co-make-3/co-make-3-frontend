@@ -1,11 +1,13 @@
 // Package imports
 import React from 'react'
-import { Location } from 'react-router-dom'
 
 // Component Imports
 import DashNavItem from './DashboardNavItem'
 
-function DashboardNav() {
+function DashboardNav(props) {
+    const location = props.location
+    console.log('Location'. location)
+
     return (
         <div className="dashboard-nav">
             <div className="row dashboard-nav-logo-wrapper">

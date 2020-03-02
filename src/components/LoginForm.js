@@ -19,17 +19,17 @@ const LoginForm = (props) => {
             <Form>
                 <div className="form-group">
                     <label htmlFor="username">username:</label>
-                    <Field type="text" class="form-control" id="username" name="username" placeholder="Enter username" />
+                    <Field type="text" className="form-control" id="username" name="username" placeholder="Enter username" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label htmlFor="password">Password:</label>
-                    <Field type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <div>
-                    {props.touched.password && props.errors.password && (<div class="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
-                    {props.touched.email && props.errors.email && (<div class="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
+                    {props.touched.password && props.errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
+                    {props.touched.email && props.errors.email && (<div className="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Submit</button>
             </Form>
         </div>
     )
