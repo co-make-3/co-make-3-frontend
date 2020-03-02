@@ -50,7 +50,7 @@ function App() {
                             <Route path="/login" render={renderProps => {
                                 return <LoginForm {...renderProps} />
                             }} />
-                            <Route exact path="/register" render={renderProps => {
+                            <Route path="/register" render={renderProps => {
                                 return <RegisterForm {...renderProps} />
                             }} />
                         </div>
