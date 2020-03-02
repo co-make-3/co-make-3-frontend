@@ -13,7 +13,7 @@ function App() {
 
     console.log('Location', location)
 
-    if (location.pathname === "/") {
+    if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register") {
         return (
             <div className="row App">
                 <Route path="/dashboard" component={Dashboard} />
