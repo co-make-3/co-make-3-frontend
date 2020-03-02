@@ -15,15 +15,7 @@ const RegisterForm = ({ touched, errors, ...props }) => {
                     <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
                 </div>
             </div>
-            <div className="row">
-                <div className="col-12">
-                    <nav className="comp-nav">
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </nav>
-                    <hr />
-                </div>
-            </div>
+           
             <h2 className="form-title">Register</h2>
             <Form>
                 <div className="form-group text-left">
