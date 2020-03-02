@@ -8,8 +8,6 @@ const RegisterForm = ({ touched, errors, ...props }) => {
 
     return (
         <div className="text-center">
-            
-           
             <h2 className="form-title">Register</h2>
             <Form>
                 <div className="form-group text-left">
@@ -20,21 +18,36 @@ const RegisterForm = ({ touched, errors, ...props }) => {
                     <label htmlFor="email">Email Address:</label>
                     <Field type="email" className="form-control" id="email" name="email" placeholder="Enter email" />
                 </div>
-                <div className="form-group text-left">
-                    <label htmlFor="firstName">Your first name:</label>
-                    <Field type="text" className="form-control" id="first_name" name="first_name" placeholder="Enter your first name" />
+                <div className="form-row">
+                    <div className="col">
+                        <div className="form-group text-left">
+                            <label htmlFor="firstName">Your First Name:</label>
+                            <Field type="text" className="form-control" id="first_name" name="first_name" placeholder="Enter your first name" />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group text-left">
+                            <div className="form-group text-left">
+                                <label htmlFor="lastName">Your Last Name:</label>
+                                <Field type="text" className="form-control" id="last_name" name="last_name" placeholder="Enter your last name" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="form-group text-left">
-                    <label htmlFor="lastName">Your last name:</label>
-                    <Field type="text" className="form-control" id="last_name" name="last_name" placeholder="Enter your last name" />
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="password">Password:</label>
-                    <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
-                </div>
-                <div className="form-group text-left">
-                    <label htmlFor="confirmpassword">Confirm Password:</label>
-                    <Field type="password" className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
+                
+                <div className="form-row">
+                    <div className="col">
+                        <div className="form-group text-left">
+                            <label htmlFor="password">Password:</label>
+                            <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <div className="form-group text-left">
+                            <label htmlFor="confirmpassword">Confirm Password:</label>
+                            <Field type="password" className="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" />
+                        </div>
+                    </div>
                 </div>
                 <div>
                     {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{errors.username}</div>)}
@@ -44,7 +57,7 @@ const RegisterForm = ({ touched, errors, ...props }) => {
                     {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
                     {touched.confirmpassword && errors.confirmpassword && (<div className="form-validation alert alert-danger" role="alert">{errors.confirmpassword}</div>)}
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-alt btn-primary">Register</button>
             </Form>
         </div>
     )

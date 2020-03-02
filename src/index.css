@@ -24,11 +24,6 @@ input[type=number] {
     font-size: 1.8rem;
 }
 
-.btn {
-    font-size: 2rem;
-    padding: 6px 20px;
-}
-
 .form-validation {
     margin-top: 16px;
 }
@@ -44,8 +39,10 @@ input[type=number] {
     height: auto;
 }
 
-form button {
+.btn-alt {
     margin-top: 40px;
+    font-size: 2rem;
+    padding: 6px 20px;
 }
 
 .form-group {
@@ -169,4 +166,19 @@ form button {
 
 .page-title {
     border-bottom: thin solid #777;
+}
+
+.btn-update {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.profile-wrapper {
+    margin: 40px 0 0 40px;
+    padding: 20px;
+    border: 2px solid #777;
+    border-radius: 5px;
 }
