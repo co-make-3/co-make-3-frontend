@@ -28,7 +28,7 @@ function DashboardNav() {
                 )
             }} />
             <Route exact path="/dashboard/profile" render={renderProps => {
-                return <DashboardProfile />
+                return <DashboardProfile {...renderProps}/>
             }} />
             <Route exact path="/dashboard/view-posts" render={renderProps => {
                 return <ViewPosts />

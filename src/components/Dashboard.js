@@ -7,6 +7,7 @@ import DashContent from './DashboardContent'
 
 
 function Dashboard() {
+    console.log('Dashboard Props', )
     return (
         <div className="dashboard-wrapper">
             <DashNav />

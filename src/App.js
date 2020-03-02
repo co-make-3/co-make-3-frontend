@@ -16,7 +16,7 @@ function App() {
     if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register") {
         return (
             <div className="row App">
-                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/dashboard/:id" component={Dashboard} />
 
                 <div className="row page-wrapper">
                     <Home />
@@ -26,7 +26,7 @@ function App() {
     } else {
         return (
             <div>
-                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/dashboard/:id" component={Dashboard} />
             </div>
         )
     }
