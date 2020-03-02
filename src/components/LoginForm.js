@@ -1,13 +1,11 @@
 // Package imports
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import { withFormik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
-import { Link } from 'react-router-dom'
 
 
 const LoginForm = (props) => {
-    const [status, setStatus] = useState([])
 
     console.log(props)
 

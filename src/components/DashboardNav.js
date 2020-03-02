@@ -6,7 +6,7 @@ import DashNavItem from './DashboardNavItem'
 
 function DashboardNav(props) {
     const location = props.location
-    console.log('Location'. location)
+    console.log('Location', location)
 
     return (
         <div className="dashboard-nav">

@@ -1,12 +1,10 @@
 // Package imports
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import axios from 'axios'
 import { withFormik, Form, Field } from 'formik'
 import * as yup from 'yup'
-import { Link } from 'react-router-dom'
 
 const RegisterForm = ({ touched, errors, ...props }) => {
-    const [status, setStatus] = useState([])
 
     return (
         <div className="text-center">
