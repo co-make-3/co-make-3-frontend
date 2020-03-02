@@ -165,7 +165,7 @@ input[type=number] {
 }
 
 .page-title {
-    border-bottom: thin solid #777;
+    border-bottom: thin solid #aaa;
 }
 
 .btn-update {
@@ -179,6 +179,6 @@ input[type=number] {
 .profile-wrapper {
     margin: 40px 0 0 40px;
     padding: 20px;
-    border: 2px solid #777;
+    border: 2px solid #aaa;
     border-radius: 5px;
 }

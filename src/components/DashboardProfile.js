@@ -2,6 +2,7 @@
 import React from 'react'
 
 // Component Imports
+//
 
 
 function DashboardProfile(props) {
@@ -55,7 +56,7 @@ function DashboardProfile(props) {
                         <div className="form-row">
                             <div className="col">
                                 <div className="form-group">
-                                    <label htmlFor="p-zipCode">Zipcode:</label>
+                                    <label htmlFor="p-zipCode">Zip Code:</label>
                                     <input type="text" className="form-control" id="p-zipCode" name="p-zipCode" />
                                 </div>
                             </div>
