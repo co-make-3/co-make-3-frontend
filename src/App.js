@@ -33,7 +33,7 @@ function App() {
                         <div className="col-12">
                             <div className="row">
                                 <div className="col-12">
-                                    <img className="form-logo" alt="co-make logo" src="images/co-make-logo.png" />
+                                    <img className="form-logo" alt="co-make logo" src="/images/co-make-logo.png" />
                                 </div>
                             </div>
                             <div className="row">

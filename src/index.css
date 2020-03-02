@@ -158,3 +158,15 @@ form button {
     width: calc(100vw - 300px);
     height: inherit;
 }
+
+.border-red {
+    border: thin solid red;
+}
+
+.border-blue {
+    border: thin solid blue;
+}
+
+.page-title {
+    border-bottom: thin solid #777;
+}

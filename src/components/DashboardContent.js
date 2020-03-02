@@ -14,7 +14,17 @@ function DashboardNav() {
         <div className="dashboard-content">
             <Route exact path="/dashboard" render={renderProps => {
                 return (
-                    <h1>Welcome</h1>
+                    <div className="row">
+                        <div className="col-12">
+            
+                            <div className="row page-title">
+                                <div className="col-12 text-left">
+                                    <h1>Welcome</h1>     
+                                </div>
+                            </div>
+            
+                        </div>
+                    </div>
                 )
             }} />
             <Route exact path="/dashboard/profile" render={renderProps => {

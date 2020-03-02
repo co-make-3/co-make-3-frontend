@@ -10,7 +10,7 @@ function DashboardNav() {
         <div className="dashboard-nav">
             <div className="row dashboard-nav-logo-wrapper">
                 <div className="col">
-                    <img className="logo" alt="co-make logo" src="images/co-make-logo.png" />
+                    <img className="logo" alt="co-make logo" src="/images/co-make-logo.png" />
                 </div>
             </div>
             <div className="row dashboard-nav-wrapper-outer">
