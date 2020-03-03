@@ -1,13 +1,21 @@
 // Package imports
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 // Component Imports
 //
 
-
 function DashboardProfile(props) {
     console.log('Profile Props', props)
     console.log('LocalStorage: ', localStorage)
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('userID')}`)
+            .then(res => setUser(res.data))
+    }, [])
+
     return (
         <div className="row">
             <div className="col-12">
