@@ -13,7 +13,10 @@ function DashboardProfile(props) {
 
     useEffect(() => {
         axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('userID')}`)
-            .then(res => setUser(res.data))
+            .then(res => {
+                setUser(res.data)
+                console.log(res.data)
+            })
     }, [])
 
     return (
