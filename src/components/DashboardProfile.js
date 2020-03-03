@@ -20,7 +20,7 @@ function DashboardProfile(props) {
                     <div className="col-4 profile-wrapper">
                         <div className="form-group">
                             <label htmlFor="p-username">Username:</label>
-                            <input type="text" className="form-control" id="p-username" name="p-username" value={localStorage.username} />
+                            <input type="text" className="form-control" id="p-username" name="p-username" />
                         </div>
                         <div className="form-row">
                             <div className="col">
