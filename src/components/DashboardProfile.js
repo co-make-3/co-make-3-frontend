@@ -7,6 +7,7 @@ import React from 'react'
 
 function DashboardProfile(props) {
     console.log('Profile Props', props)
+    console.log('LocalStorage: ', localStorage)
     return (
         <div className="row">
             <div className="col-12">
@@ -19,7 +20,7 @@ function DashboardProfile(props) {
                     <div className="col-4 profile-wrapper">
                         <div className="form-group">
                             <label htmlFor="p-username">Username:</label>
-                            <input type="text" className="form-control" id="p-username" name="p-username" />
+                            <input type="text" className="form-control" id="p-username" name="p-username" value={localStorage.username} />
                         </div>
                         <div className="form-row">
                             <div className="col">
