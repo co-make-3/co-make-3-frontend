@@ -17,7 +17,7 @@ function DashboardProfile(props) {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-4 profile-wrapper">
+                    <div className="col-4 content-wrapper">
                         <div className="form-group">
                             <label htmlFor="p-username">Username:</label>
                             <input type="text" className="form-control" id="p-username" name="p-username" />
