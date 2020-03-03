@@ -34,10 +34,14 @@ function UserPost() {
                                 </div>
                             </div>
                             <div className="form-row">
-                                <button className="btn btn-primary">Upload Photo</button>
+                                <div className="col">
+                                    <input className="form-control-file" type="file" />
+                                </div>
                             </div>
-                            <div className="form-row">
-                                <button type="submit" className="btn btn-primary btn-update">Post</button>
+                            <div className="form-row m-t-20">
+                                <div className="col">
+                                    <button type="submit" className="btn btn-primary btn-update">Post</button>
+                                </div>
                             </div>
                         </form>
                     </div>

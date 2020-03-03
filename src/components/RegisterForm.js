@@ -52,8 +52,8 @@ const RegisterForm = ({ touched, errors, ...props }) => {
                 <div>
                     {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{errors.username}</div>)}
                     {touched.email && errors.email && (<div className="form-validation alert alert-danger" role="alert">{errors.email}</div>)}
-                    {touched.firstName && errors.firstName && (<div className="form-validation alert alert-danger" role="alert">{errors.firstName}</div>)}
-                    {touched.lastName && errors.lastName && (<div className="form-validation alert alert-danger" role="alert">{errors.lastName}</div>)}
+                    {touched.first_name && errors.first_name && (<div className="form-validation alert alert-danger" role="alert">{errors.first_name}</div>)}
+                    {touched.last_name && errors.last_name && (<div className="form-validation alert alert-danger" role="alert">{errors.last_name}</div>)}
                     {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
                     {touched.confirmpassword && errors.confirmpassword && (<div className="form-validation alert alert-danger" role="alert">{errors.confirmpassword}</div>)}
                 </div>

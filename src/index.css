@@ -186,3 +186,32 @@ input[type=number] {
 label {
     font-size: 2.2rem;
 }
+
+.m-t-20 {
+    margin-top: 20px;
+}
+
+table {
+    font-size: 1.8rem;
+    border-radius: 5px;
+}
+
+tr {
+    height: 50px;
+}
+
+.table-h-c-1 {
+    width: 5%;
+}
+
+.table-h-c-2 {
+    width: 75%;
+}
+
+.table-h-c-3 {
+    width: 10%;
+}
+
+.table-h-c-4 {
+    width: 10%;
+}

@@ -73,20 +73,7 @@ function DashboardProfile(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="form-row">
-                            <div className="col">
-                                <div className="form-group">
-                                    <label htmlFor="p-zipCode">Zip Code:</label>
-                                    <input type="text" className="form-control" id="p-zipCode" name="p-zipCode" />
-                                </div>
-                            </div>
-                            <div className="col align-self-end text-right"></div>
-                        </div>
-                        <div className="form-row">
-                            <div className="col text-center">
-                                <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
-                            </div>
-                        </div>
+                            <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
                     </div>
                     <div className="col-8"></div>
                 </div>
