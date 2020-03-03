@@ -73,11 +73,7 @@ function DashboardProfile(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="form-row">
-                            <div className="col text-center">
-                                <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
-                            </div>
-                        </div>
+                            <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
                     </div>
                     <div className="col-8"></div>
                 </div>

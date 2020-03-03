@@ -18,11 +18,11 @@ function DashboardNav(props) {
             <div className="row dashboard-nav-wrapper-outer">
                 <div className="col dashboard-nav-wrapper-inner">
                     <ul className="nav">
-                        <DashNavItem link="/dashboard" title="Home" isActive={"active"} />
-                        <DashNavItem link="/dashboard/profile" title="Profile" isActive={""} />
-                        <DashNavItem link="/dashboard/new-post" title="New Post" isActive={""} />
-                        <DashNavItem link="/dashboard/view-posts" title="View Posts" isActive={""} />
-                        <DashNavItem link="/dashboard/activity" title="My Activities" isActive={""} />
+                        <DashNavItem link="/dashboard" title="Home" />
+                        <DashNavItem link="/dashboard/profile" title="Profile" />
+                        <DashNavItem link="/dashboard/new-post" title="New Post" />
+                        <DashNavItem link="/dashboard/view-posts" title="View Posts" />
+                        <DashNavItem link="/dashboard/activity" title="My Activities" />
                         <DashNavItem link="/" title="Logout" isActive={""} />
                     </ul>
                 </div>

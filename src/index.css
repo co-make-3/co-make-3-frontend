@@ -186,3 +186,7 @@ input[type=number] {
 label {
     font-size: 2.2rem;
 }
+
+.m-t-20 {
+    margin-top: 20px;
+}
