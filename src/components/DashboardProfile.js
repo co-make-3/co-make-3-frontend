@@ -22,9 +22,8 @@ function DashboardProfile(props) {
         axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('userID')}`)
             .then(res => {
                 setUser(res.data)
-                console.log('Profile Data: ', res.data)
+                console.log(res.data)
             })
-        
     }, [])
 
 
