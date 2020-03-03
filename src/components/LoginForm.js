@@ -8,6 +8,7 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 const LoginForm = (props) => {
 
     console.log(props)
+    console.log('LocalStorage - id: ', localStorage.id)
 
     return (
         <div className="text-center">
@@ -49,7 +50,7 @@ export default withFormik({
             .post('http://co-make-3.herokuapp.com/api/auth/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
-                localStorage.setItem('userID', res.data.id)
+                localStorage.setItem('id', res.data.id)
                 localStorage.setItem('password', values.password)
                 formikBag.setStatus(res.data)
                 console.log('Res.data: ', res.data)
