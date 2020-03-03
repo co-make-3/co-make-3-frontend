@@ -8,6 +8,12 @@ function DashboardNav(props) {
     const location = props.location
     console.log('Location', location)
 
+    const handleLogout = () => {
+        localStorage.setItem('token', "")
+        localStorage.setItem('userID', "")
+        localStorage.setItem('password', "")
+    }
+
     return (
         <div className="dashboard-nav">
             <div className="row dashboard-nav-logo-wrapper">
@@ -23,7 +29,7 @@ function DashboardNav(props) {
                         <DashNavItem link="/dashboard/new-post" title="New Post" />
                         <DashNavItem link="/dashboard/view-posts" title="View Posts" />
                         <DashNavItem link="/dashboard/activity" title="My Activities" />
-                        <DashNavItem link="/login" title="Logout" />
+                        <DashNavItem link="/login" title="Logout" handleLogout={handleLogout()} />
                     </ul>
                 </div>
             </div>

@@ -22,8 +22,8 @@ const LoginForm = (props) => {
                     <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <div>
+                    {props.touched.username && props.errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
                     {props.touched.password && props.errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
-                    {props.touched.email && props.errors.email && (<div className="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
                 </div>
                 <button type="submit" className="btn btn-alt btn-primary">Login</button>
             </Form>
@@ -39,7 +39,7 @@ export default withFormik({
     validationSchema: yup.object().shape({
         username: yup
             .string()
-            .required('An email is required.'),
+            .required('A username is required.'),
         password: yup
             .string()
             .required('A password is required.'),

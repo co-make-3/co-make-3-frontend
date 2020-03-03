@@ -12,7 +12,7 @@ import Activity from './Activities'
 function DashboardNav() {
     return (
         <div className="dashboard-content">
-            <Route exact path="/dashboard" render={renderProps => {
+            <Route exact path="/dashboard/:id" render={renderProps => {
                 return (
                     <div className="row">
                         <div className="col-12">
