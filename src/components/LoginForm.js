@@ -50,7 +50,9 @@ export default withFormik({
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('userID', res.data.id)
+                localStorage.setItem('username', res.data.username)
                 formikBag.setStatus(res.data)
+                console.log('Res.data: ', res.data)
                 formikBag.resetForm()
                 formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })
