@@ -9,7 +9,14 @@ function DashboardProfile(props) {
     console.log('Profile Props', props)
     console.log('LocalStorage: ', localStorage)
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState({
+        username: '',
+        first_name: '',
+        last_name: '',
+        email: ''
+    });
+
+    const userPassword = localStorage.password
 
     useEffect(() => {
         axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('userID')}`)
@@ -18,6 +25,7 @@ function DashboardProfile(props) {
                 console.log(res.data)
             })
     }, [])
+
 
     return (
         <div className="row">
@@ -28,28 +36,28 @@ function DashboardProfile(props) {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-4 profile-wrapper">
+                    <div className="col-4 content-wrapper">
                         <div className="form-group">
                             <label htmlFor="p-username">Username:</label>
-                            <input type="text" className="form-control" id="p-username" name="p-username" />
+                            <input type="text" className="form-control" id="p-username" name="p-username" defaultValue={user.username} />
                         </div>
                         <div className="form-row">
                             <div className="col">
                                 <div className="form-group">
                                     <label htmlFor="p-firstName">First Name:</label>
-                                    <input type="text" className="form-control" id="p-firstName" name="p-firstName" />
+                                    <input type="text" className="form-control" id="p-firstName" name="p-firstName" defaultValue={user.first_name} />
                                 </div>
                             </div>
                             <div className="col">
                                 <div className="form-group">
                                     <label htmlFor="p-LastName">Last Name:</label>
-                                    <input type="text" className="form-control" id="p-lastName" name="p-lastName" />
+                                    <input type="text" className="form-control" id="p-lastName" name="p-lastName" defaultValue={user.last_name} />
                                 </div>
                             </div>
                         </div>
                         <div className="form-group">
                             <label htmlFor="p-email">Email Address:</label>
-                            <input type="text" className="form-control" id="p-email" name="p-email" />
+                            <input type="text" className="form-control" id="p-email" name="p-email" defaultValue={user.email} />
                         </div>
                         <div className="form-row">
                             <div className="col">

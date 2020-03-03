@@ -12,6 +12,39 @@ function UserPost() {
                     </div>
                 </div>
 
+                <div className="row">
+                    <div className="col-4 content-wrapper">
+                        <form>
+                            <div className="form-group">
+                                <label htmlFor="description">Description:</label>
+                                <textarea className="form-control" name="description" id="description" rows="15"></textarea>
+                            </div>
+                            <div className="form-row">
+                                <div className="col">
+                                    <div className="form-group">
+                                        <label htmlFor="city" >City:</label>
+                                        <input className="form-control" type="text" name="city" id="city" />
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="form-group">
+                                        <label htmlFor="city" >Zip Code:</label>
+                                        <input className="form-control" type="text" name="city" id="city" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="form-row">
+                                <button className="btn btn-primary">Upload Photo</button>
+                            </div>
+                            <div className="form-row">
+                                <button type="submit" className="btn btn-primary btn-update">Post</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="col-8"></div>
+                </div>
+                    
+    
             </div>
         </div>
     )
