@@ -50,7 +50,7 @@ export default withFormik({
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('userID', res.data.id)
-                localStorage.setItem('username', res.data.username)
+                localStorage.setItem('password', values.password)
                 formikBag.setStatus(res.data)
                 console.log('Res.data: ', res.data)
                 formikBag.resetForm()
