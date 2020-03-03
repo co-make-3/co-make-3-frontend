@@ -23,6 +23,41 @@ function ViewPosts() {
                     </div>
                 </div>
 
+                <div className="row content-wrapper">
+                    <div className="col-12">
+                        <table class="table table-striped table-dark">
+                            <thead>
+                                <tr>
+                                    <th className="table-h-c-1" scope="col">ID#</th>
+                                    <th className="table-h-c-2" scope="col">Description</th>
+                                    <th className="table-h-c-3" scope="col">Up Votes</th>
+                                    <th className="table-h-c-4" scope="col">Down Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>,jhcvnhvhmnjv,hmvb....</td>
+                                    <td>4857</td>
+                                    <td>24</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>,mjb;.,mjb.,jb.,mj....</td>
+                                    <td>1540</td>
+                                    <td>3</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>j,hvgljhvgbljhb....</td>
+                                    <td>754</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
     )
