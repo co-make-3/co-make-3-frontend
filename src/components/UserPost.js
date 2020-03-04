@@ -1,8 +1,25 @@
 // Package imports
 import React from 'react'
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 
 function UserPost() {
+
+    /**
+     * 
+     * @param newPost 
+     * The API will expect an object in this format
+     * {
+            description: "stuff needs to be fixed",
+            city: "Portland",
+            zip_code: "97206",
+            post_image_url: "www.image.com"
+     * }
+     */
+    function handleSubmit(newPost) {
+        axiosWithAuth().post('http://co-make-3.herokuapp.com/api/posts', newPost)
+            .then(res => console.log(res))
+    } 
     
     return (
         <div className="row">

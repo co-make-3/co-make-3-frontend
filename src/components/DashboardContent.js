@@ -7,6 +7,7 @@ import DashboardProfile from './DashboardProfile'
 import NewPost from './UserPost'
 import ViewPosts from './ViewPosts'
 import Activity from './Activities'
+import { PrivateRoute } from '../privateRoute/PrivateRoute'
 
 
 function DashboardNav() {
@@ -28,16 +29,16 @@ function DashboardNav() {
                     </div>
                 )
             }} />
-            <Route exact path="/dashboard/:id/profile" render={renderProps => {
+            <PrivateRoute exact path="/dashboard/:id/profile" render={renderProps => {
                 return <DashboardProfile {...renderProps} />
             }} />
-            <Route exact path="/dashboard/:id/view-posts" render={renderProps => {
+            <PrivateRoute exact path="/dashboard/:id/view-posts" render={renderProps => {
                 return <ViewPosts {...renderProps} />
             }} />
-            <Route exact path="/dashboard/:id/new-post" render={renderProps => {
+            <PrivateRoute exact path="/dashboard/:id/new-post" render={renderProps => {
                 return <NewPost {...renderProps} />
             }} />
-            <Route exact path="/dashboard/:id/activity" render={renderProps => {
+            <PrivateRoute exact path="/dashboard/:id/activity" render={renderProps => {
                 return <Activity {...renderProps} />
             }} />
         </div>
