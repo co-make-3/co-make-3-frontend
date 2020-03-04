@@ -4,8 +4,8 @@ import React from 'react'
 // Component Imports
 import DashNavItem from './DashboardNavItem'
 
+
 function DashboardNav(props) {
-    const location = props.location
 
     return (
         <div className="dashboard-nav">
@@ -18,11 +18,11 @@ function DashboardNav(props) {
                 <div className="col dashboard-nav-wrapper-inner">
                     <ul className="nav">
                         <DashNavItem link="/dashboard/:id" title="Home" />
-                        <DashNavItem link="/dashboard/profile" title="Profile" />
-                        <DashNavItem link="/dashboard/new-post" title="New Post" />
-                        <DashNavItem link="/dashboard/view-posts" title="View Posts" />
-                        <DashNavItem link="/dashboard/activity" title="My Activities" />
-                        <DashNavItem link="/login" title="Logout" handleLogout="yes" />
+                        <DashNavItem link="/dashboard/:id/profile" title="Profile" />
+                        <DashNavItem link="/dashboard/:id/new-post" title="New Post" />
+                        <DashNavItem link="/dashboard/:id/view-posts" title="View Posts" />
+                        <DashNavItem link="/dashboard/:id/activity" title="My Activities" />
+                        <DashNavItem link="/login" title="Logout" />
                     </ul>
                 </div>
             </div>
