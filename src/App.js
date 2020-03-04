@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom'
 // Component Imports
 import Dashboard from './components/Dashboard'
 import Home from './components/Home'
+import { PrivateRoute } from './privateRoute/PrivateRoute'
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
     } else {
         return (
             <div>
-                <Route path="/dashboard/:id" component={Dashboard} />
+                <PrivateRoute path="/dashboard/:id" component={Dashboard} />
             </div>
         )
     }
