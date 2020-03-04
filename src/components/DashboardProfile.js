@@ -3,9 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 // Component Imports
-//
+
 
 function DashboardProfile(props) {
+    
     console.log('Profile Props', props)
     console.log('LocalStorage: ', localStorage)
 

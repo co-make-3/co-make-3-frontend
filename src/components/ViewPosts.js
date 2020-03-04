@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
+
 function ViewPosts() {
+
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
