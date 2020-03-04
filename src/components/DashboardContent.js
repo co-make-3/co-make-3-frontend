@@ -7,10 +7,12 @@ import DashboardProfile from './DashboardProfile'
 import NewPost from './UserPost'
 import ViewPosts from './ViewPosts'
 import Activity from './Activities'
-import { PrivateRoute } from '../privateRoute/PrivateRoute'
+import PrivateRoute from '../privateRoute/PrivateRoute'
 
 
 function DashboardNav() {
+
+    const id = localStorage.getItem('id')
     
     return (
         <div className="dashboard-content">
@@ -29,18 +31,10 @@ function DashboardNav() {
                     </div>
                 )
             }} />
-            <PrivateRoute exact path="/dashboard/:id/profile" render={renderProps => {
-                return <DashboardProfile {...renderProps} />
-            }} />
-            <PrivateRoute exact path="/dashboard/:id/view-posts" render={renderProps => {
-                return <ViewPosts {...renderProps} />
-            }} />
-            <PrivateRoute exact path="/dashboard/:id/new-post" render={renderProps => {
-                return <NewPost {...renderProps} />
-            }} />
-            <PrivateRoute exact path="/dashboard/:id/activity" render={renderProps => {
-                return <Activity {...renderProps} />
-            }} />
+            <PrivateRoute exact path={`/dashboard/${id}/profile`} component={DashboardProfile} />
+            <PrivateRoute exact path={`/dashboard/${id}/view-posts`} component={ViewPosts} />
+            <PrivateRoute exact path={`/dashboard/${id}/new-post`} component={NewPost} />
+            <PrivateRoute exact path={`/dashboard/${id}/activity`} component={Activity} />
         </div>
     )
 }

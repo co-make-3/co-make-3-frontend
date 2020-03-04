@@ -20,7 +20,7 @@ function DashboardProfile(props) {
     const userPassword = localStorage.password
 
     useEffect(() => {
-        axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('userID')}`)
+        axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser(res.data)
                 console.log(res.data)
