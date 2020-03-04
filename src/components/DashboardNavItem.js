@@ -5,7 +5,8 @@ import {NavLink} from 'react-router-dom'
 // Component Imports
 
 
-function DashboardNavLink(props) { 
+function DashboardNavLink(props) {
+    
     return (
         <li>
             <NavLink exact to={props.link}>{props.title}</NavLink>

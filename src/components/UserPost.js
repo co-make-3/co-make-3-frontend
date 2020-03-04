@@ -3,6 +3,7 @@ import React from 'react'
 
 
 function UserPost() {
+    
     return (
         <div className="row">
             <div className="col-12">
@@ -36,7 +37,7 @@ function UserPost() {
                             </div>
                             <div className="form-row">
                                 <div className="col">
-                                    <input className="form-control-file" type="file" />
+                                    <input className="form-control-file" type="file" name="post_image_url" id="post_image_url"  />
                                 </div>
                             </div>
                             <div className="form-row m-t-20">

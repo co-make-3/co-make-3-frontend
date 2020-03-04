@@ -8,6 +8,7 @@ import DashContent from './DashboardContent'
 
 
 function Dashboard(props) {
+    
     return (
         <div className="dashboard-wrapper">
             <DashNav />

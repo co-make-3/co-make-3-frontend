@@ -8,16 +8,6 @@ import RegisterForm from './RegisterForm'
 
 
 function Home() {
-    const loggedIn = () => {
-        //console.log('triggered')
-        if (localStorage.getItem('token') !== null) {
-            console.log('(true) LocalStorage - id: ', localStorage.getItem('id'))
-            return true
-        } else {
-            console.log('(false) LocalStorage - id: ', localStorage.getItem('id'))
-            return false
-        }
-    }
 
     return (
         <div className="col form-wrapper">
