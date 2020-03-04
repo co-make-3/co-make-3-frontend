@@ -4,9 +4,8 @@ import React from 'react'
 // Component Imports
 import DashNavItem from './DashboardNavItem'
 
+
 function DashboardNav(props) {
-    const location = props.location
-    console.log('Location', location)
 
     return (
         <div className="dashboard-nav">
@@ -18,12 +17,12 @@ function DashboardNav(props) {
             <div className="row dashboard-nav-wrapper-outer">
                 <div className="col dashboard-nav-wrapper-inner">
                     <ul className="nav">
-                        <DashNavItem link="/dashboard" title="Home" isActive={"active"} />
-                        <DashNavItem link="/dashboard/profile" title="Profile" isActive={""} />
-                        <DashNavItem link="/dashboard/new-post" title="New Post" isActive={""} />
-                        <DashNavItem link="/dashboard/view-posts" title="View Posts" isActive={""} />
-                        <DashNavItem link="/dashboard/activity" title="My Activities" isActive={""} />
-                        <DashNavItem link="/" title="Logout" isActive={""} />
+                        <DashNavItem link="/dashboard/:id" title="Home" />
+                        <DashNavItem link="/dashboard/:id/profile" title="Profile" />
+                        <DashNavItem link="/dashboard/:id/new-post" title="New Post" />
+                        <DashNavItem link="/dashboard/:id/view-posts" title="View Posts" />
+                        <DashNavItem link="/dashboard/:id/activity" title="My Activities" />
+                        <DashNavItem link="/login" title="Logout" />
                     </ul>
                 </div>
             </div>

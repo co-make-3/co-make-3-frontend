@@ -10,9 +10,10 @@ import Activity from './Activities'
 
 
 function DashboardNav() {
+    
     return (
         <div className="dashboard-content">
-            <Route exact path="/dashboard" render={renderProps => {
+            <Route exact path="/dashboard/:id" render={renderProps => {
                 return (
                     <div className="row">
                         <div className="col-12">
@@ -27,17 +28,17 @@ function DashboardNav() {
                     </div>
                 )
             }} />
-            <Route exact path="/dashboard/profile" render={renderProps => {
-                return <DashboardProfile {...renderProps}/>
+            <Route exact path="/dashboard/:id/profile" render={renderProps => {
+                return <DashboardProfile {...renderProps} />
             }} />
-            <Route exact path="/dashboard/view-posts" render={renderProps => {
-                return <ViewPosts />
+            <Route exact path="/dashboard/:id/view-posts" render={renderProps => {
+                return <ViewPosts {...renderProps} />
             }} />
-            <Route exact path="/dashboard/new-post" render={renderProps => {
-                return <NewPost />
+            <Route exact path="/dashboard/:id/new-post" render={renderProps => {
+                return <NewPost {...renderProps} />
             }} />
-            <Route exact path="/dashboard/activity" render={renderProps => {
-                return <Activity />
+            <Route exact path="/dashboard/:id/activity" render={renderProps => {
+                return <Activity {...renderProps} />
             }} />
         </div>
     )

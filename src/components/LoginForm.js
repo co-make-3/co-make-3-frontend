@@ -8,6 +8,7 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 const LoginForm = (props) => {
 
     console.log(props)
+    console.log('LocalStorage - id: ', localStorage.getItem('id'))
 
     return (
         <div className="text-center">
@@ -22,8 +23,8 @@ const LoginForm = (props) => {
                     <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <div>
+                    {props.touched.username && props.errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
                     {props.touched.password && props.errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
-                    {props.touched.email && props.errors.email && (<div className="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
                 </div>
                 <button type="submit" className="btn btn-alt btn-primary">Login</button>
             </Form>
@@ -39,7 +40,7 @@ export default withFormik({
     validationSchema: yup.object().shape({
         username: yup
             .string()
-            .required('An email is required.'),
+            .required('A username is required.'),
         password: yup
             .string()
             .required('A password is required.'),
@@ -49,10 +50,10 @@ export default withFormik({
             .post('http://co-make-3.herokuapp.com/api/auth/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
-                localStorage.setItem('userID', res.data.id)
+                localStorage.setItem('id', res.data.id)
                 localStorage.setItem('password', values.password)
                 formikBag.setStatus(res.data)
-                console.log('Res.data: ', res.data)
+                //console.log('Res.data: ', res.data)
                 formikBag.resetForm()
                 formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })

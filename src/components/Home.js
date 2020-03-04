@@ -1,6 +1,6 @@
 // Package imports
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 
 // Component Imports
 import LoginForm from './LoginForm'
@@ -8,6 +8,7 @@ import RegisterForm from './RegisterForm'
 
 
 function Home() {
+
     return (
         <div className="col form-wrapper">
             <div className="row">
@@ -20,13 +21,15 @@ function Home() {
                     <div className="row">
                         <div className="col-12">
                             <nav className="comp-nav">
-                                <Link to="/">Home</Link>
                                 <Link to="/login">Login</Link>
                                 <Link to="/register">Register</Link>
                             </nav>
                             <hr />
                         </div>
                     </div>
+                    <Route path="/">
+                        {loggedIn() ? <Redirect to={`/dashboard/${localStorage.getItem('id')}`} /> : <Redirect to="/login" />}
+                    </Route>
                     <Route path="/login" render={renderProps => {
                         return <LoginForm {...renderProps} />
                     }} />
