@@ -8,7 +8,7 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 const LoginForm = (props) => {
 
     console.log(props)
-    console.log('LocalStorage - id: ', localStorage.id)
+    console.log('LocalStorage - id: ', localStorage.getItem('id'))
 
     return (
         <div className="text-center">
@@ -53,7 +53,7 @@ export default withFormik({
                 localStorage.setItem('id', res.data.id)
                 localStorage.setItem('password', values.password)
                 formikBag.setStatus(res.data)
-                console.log('Res.data: ', res.data)
+                //console.log('Res.data: ', res.data)
                 formikBag.resetForm()
                 formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })

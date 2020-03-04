@@ -9,12 +9,12 @@ import RegisterForm from './RegisterForm'
 
 function Home() {
     const loggedIn = () => {
-        console.log('triggered')
-        if (!localStorage.token) {
-            console.log('(true) LocalStorage - id: ', localStorage.id)
+        //console.log('triggered')
+        if (localStorage.getItem('token') !== null) {
+            console.log('(true) LocalStorage - id: ', localStorage.getItem('id'))
             return true
         } else {
-            console.log('(false) LocalStorage - id: ', localStorage.id)
+            console.log('(false) LocalStorage - id: ', localStorage.getItem('id'))
             return false
         }
     }
@@ -37,9 +37,9 @@ function Home() {
                             <hr />
                         </div>
                     </div>
-                    {/* <Route path="/">
-                        {loggedIn() ? <Redirect to={`/dashboard/${localStorage.id}`} /> : <Redirect to="/login" />}
-                    </Route> */}
+                    <Route path="/">
+                        {loggedIn() ? <Redirect to={`/dashboard/${localStorage.getItem('id')}`} /> : <Redirect to="/login" />}
+                    </Route>
                     <Route path="/login" render={renderProps => {
                         return <LoginForm {...renderProps} />
                     }} />
