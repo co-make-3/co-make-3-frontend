@@ -30,7 +30,7 @@ function UserPost() {
                                 </div>
                                 <div className="col">
                                     <div className="form-group">
-                                        <label htmlFor="zip_code" >Zip Code:</label>
+                                        <label htmlFor="zip_code">Zip Code:</label>
                                         <input className="form-control" type="text" name="zip_code" id="zip_code" />
                                     </div>
                                 </div>
