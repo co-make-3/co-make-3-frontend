@@ -1,5 +1,7 @@
 // Package imports
 import React from 'react'
+import { withFormik, Form, Field } from 'formik'
+import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 
@@ -33,28 +35,28 @@ function UserPost() {
 
                 <div className="row">
                     <div className="col-4 content-wrapper">
-                        <form>
+                        <Form>
                             <div className="form-group">
                                 <label htmlFor="description">Description:</label>
-                                <textarea className="form-control" name="description" id="description" rows="15"></textarea>
+                                <Field component="textarea" className="form-control" name="description" id="description" rows="15"></Field>
                             </div>
                             <div className="form-row">
                                 <div className="col">
                                     <div className="form-group">
                                         <label htmlFor="city">City:</label>
-                                        <input className="form-control" type="text" name="city" id="city" />
+                                        <Field type="text" className="form-control" name="city" id="city" />
                                     </div>
                                 </div>
                                 <div className="col">
                                     <div className="form-group">
                                         <label htmlFor="zip_code">Zip Code:</label>
-                                        <input className="form-control" type="text" name="zip_code" id="zip_code" />
+                                        <Field type="text" className="form-control" name="zip_code" id="zip_code" />
                                     </div>
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="col">
-                                    <input className="form-control-file" type="file" name="post_image_url" id="post_image_url"  />
+                                    <Field type="file" className="form-control-file" name="post_image_url" id="post_image_url"  />
                                 </div>
                             </div>
                             <div className="form-row m-t-20">
@@ -62,7 +64,7 @@ function UserPost() {
                                     <button type="submit" className="btn btn-primary btn-update">Post</button>
                                 </div>
                             </div>
-                        </form>
+                        </Form>
                     </div>
                     <div className="col-8"></div>
                 </div>
@@ -73,4 +75,22 @@ function UserPost() {
     )
 }
 
-export default UserPost
+export default withFormik({
+    mapPropsToValues: ({ description, city, zip_code, post_image_url }) => ({
+        description: description || '',
+        city: city || '',
+        zip_code: zip_code || '',
+        post_image_url: post_image_url || ''
+    }),
+    validationSchema: yup.object().shape({
+        description: yup
+            .string()
+            .required('A description is required.'),
+        city: yup
+            .string()
+            .required('A city is required.'),
+        zip_code: yup
+            .string()
+            .required('A zip code is required.'),
+    }),
+})(UserPost)

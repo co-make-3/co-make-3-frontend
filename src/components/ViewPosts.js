@@ -1,13 +1,14 @@
 // Package imports
 import React, { useState, useEffect } from 'react'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
-import { Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import Post from './Post';
 
 function ViewPosts() {
 
     const [posts, setPosts] = useState([]);
+    const postID = ""
 
     useEffect(() => {
         axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
@@ -19,6 +20,7 @@ function ViewPosts() {
 
     return (
         <div className="row">
+            <Route exact path={`/post/${postID}`}></Route>
             <div className="col-12">
 
                 <div className="row page-title">

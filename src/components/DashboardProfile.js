@@ -6,9 +6,6 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 
 function DashboardProfile(props) {
-    
-    console.log('Profile Props', props)
-    console.log('LocalStorage: ', localStorage)
 
     const [user, setUser] = useState({
         username: '',
@@ -23,7 +20,6 @@ function DashboardProfile(props) {
         axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser(res.data)
-                console.log(res.data)
             })
     }, [])
 
