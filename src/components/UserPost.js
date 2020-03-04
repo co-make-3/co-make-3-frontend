@@ -6,22 +6,6 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 
 function UserPost() {
-
-    /**
-     * 
-     * @param newPost 
-     * The API will expect an object in this format
-     * {
-            description: "stuff needs to be fixed",
-            city: "Portland",
-            zip_code: "97206",
-            post_image_url: "www.image.com"
-     * }
-     */
-    function handleSubmit(newPost) {
-        axiosWithAuth().post('http://co-make-3.herokuapp.com/api/posts', newPost)
-            .then(res => console.log(res))
-    } 
     
     return (
         <div className="row">
@@ -32,7 +16,6 @@ function UserPost() {
                         <h1>New Post</h1>     
                     </div>
                 </div>
-
                 <div className="row">
                     <div className="col-4 content-wrapper">
                         <Form>
@@ -68,8 +51,6 @@ function UserPost() {
                     </div>
                     <div className="col-8"></div>
                 </div>
-                    
-    
             </div>
         </div>
     )
@@ -93,4 +74,13 @@ export default withFormik({
             .string()
             .required('A zip code is required.'),
     }),
+    handleSubmit: (values, formikBag) => {
+        axiosWithAuth().post('http://co-make-3.herokuapp.com/api/posts', values)
+            .then(res => {
+                formikBag.setStatus(res.data)
+                formikBag.resetForm()
+                //formikBag.props.history.push(`/dashboard/${res.data.id}`)
+            })
+            .catch(err => console.log('Axios: ', err.res))
+    }
 })(UserPost)
