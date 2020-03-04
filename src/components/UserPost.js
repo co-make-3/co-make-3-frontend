@@ -1,6 +1,7 @@
 // Package imports
 import React from 'react'
 
+
 function UserPost() {
     return (
         <div className="row">
