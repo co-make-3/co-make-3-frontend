@@ -5,6 +5,7 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 import Post from './Post';
 
 function ViewPosts() {
+
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {

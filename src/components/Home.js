@@ -27,9 +27,6 @@ function Home() {
                             <hr />
                         </div>
                     </div>
-                    <Route path="/">
-                        {loggedIn() ? <Redirect to={`/dashboard/${localStorage.getItem('id')}`} /> : <Redirect to="/login" />}
-                    </Route>
                     <Route path="/login" render={renderProps => {
                         return <LoginForm {...renderProps} />
                     }} />
