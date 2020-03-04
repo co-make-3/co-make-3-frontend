@@ -6,18 +6,17 @@ import { useLocation } from 'react-router-dom'
 // Component Imports
 import Dashboard from './components/Dashboard'
 import Home from './components/Home'
-import { PrivateRoute } from './privateRoute/PrivateRoute'
+import PrivateRoute from './privateRoute/PrivateRoute'
 
 
 function App() {
     const location = useLocation()
-
-    console.log('Location', location)
+    const id = localStorage.getItem('id')
 
     if (location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register") {
         return (
             <div className="row App">
-                <Route path="/dashboard/:id" component={Dashboard} />
+                <Route path={`/dashboard/${id}`} component={Dashboard} />
 
                 <div className="row page-wrapper">
                     <Home />
@@ -27,7 +26,7 @@ function App() {
     } else {
         return (
             <div>
-                <PrivateRoute path="/dashboard/:id" component={Dashboard} />
+                <PrivateRoute path={`/dashboard/${id}`} component={Dashboard} />
             </div>
         )
     }
