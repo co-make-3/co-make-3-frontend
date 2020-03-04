@@ -23,14 +23,14 @@ function UserPost() {
                             <div className="form-row">
                                 <div className="col">
                                     <div className="form-group">
-                                        <label htmlFor="city" >City:</label>
+                                        <label htmlFor="city">City:</label>
                                         <input className="form-control" type="text" name="city" id="city" />
                                     </div>
                                 </div>
                                 <div className="col">
                                     <div className="form-group">
-                                        <label htmlFor="city" >Zip Code:</label>
-                                        <input className="form-control" type="text" name="city" id="city" />
+                                        <label htmlFor="zip_code" >Zip Code:</label>
+                                        <input className="form-control" type="text" name="zip_code" id="zip_code" />
                                     </div>
                                 </div>
                             </div>
