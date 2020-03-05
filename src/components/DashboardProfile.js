@@ -1,14 +1,13 @@
 // Package imports
 import React, { useEffect, useState } from 'react'
+import { withFormik, Form, Field } from 'formik'
+import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 // Component Imports
 
 
 function DashboardProfile(props) {
-    
-    console.log('Profile Props', props)
-    console.log('LocalStorage: ', localStorage)
 
     const [user, setUser] = useState({
         username: '',
@@ -20,11 +19,13 @@ function DashboardProfile(props) {
     const userPassword = localStorage.password
 
     useEffect(() => {
-        axiosWithAuth().get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
+        axiosWithAuth()
+            .get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser(res.data)
-                console.log(res.data)
+                console.log('User: ', res.data)
             })
+            .catch(err => console.log('Axios: ', err.res))
     }, [])
 
 
@@ -38,43 +39,40 @@ function DashboardProfile(props) {
                 </div>
                 <div className="row">
                     <div className="col-4 content-wrapper">
-                        <div className="form-group">
-                            <label htmlFor="p-username">Username:</label>
-                            <input type="text" className="form-control" id="p-username" name="p-username" defaultValue={user.username} />
-                        </div>
-                        <div className="form-row">
-                            <div className="col">
-                                <div className="form-group">
-                                    <label htmlFor="p-firstName">First Name:</label>
-                                    <input type="text" className="form-control" id="p-firstName" name="p-firstName" defaultValue={user.first_name} />
+                        <Form> 
+                            <div className="form-group">
+                                <label htmlFor="username">Username:</label>
+                                <Field type="text" className="form-control" id="username" name="username" defaultValue={user.username} />
+                            </div>
+                            <div className="form-row">
+                                <div className="col">
+                                    <div className="form-group">
+                                        <label htmlFor="first_name">First Name:</label>
+                                        <Field type="text" className="form-control" id="first_name" name="first_name" defaultValue={user.first_name} />
+                                    </div>
+                                </div>
+                                <div className="col">
+                                    <div className="form-group">
+                                        <label htmlFor="last_name">Last Name:</label>
+                                        <Field type="text" className="form-control" id="last_name" name="last_name" defaultValue={user.last_name} />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col">
-                                <div className="form-group">
-                                    <label htmlFor="p-LastName">Last Name:</label>
-                                    <input type="text" className="form-control" id="p-lastName" name="p-lastName" defaultValue={user.last_name} />
+                            <div className="form-group">
+                                <label htmlFor="email">Email Address:</label>
+                                <Field type="text" className="form-control" id="email" name="email" defaultValue={user.email} />
+                            </div>
+                            
+                            <div className="form-row m-t-20">
+                                <div className="col">
+                                    {props.touched.username && props.errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
+                                    {props.touched.first_name && props.errors.first_name && (<div className="form-validation alert alert-danger" role="alert">{props.errors.first_name}</div>)}
+                                    {props.touched.last_name && props.errors.last_name && (<div className="form-validation alert alert-danger" role="alert">{props.errors.last_name}</div>)}
+                                    {props.touched.email && props.errors.email && (<div className="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
                                 </div>
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="p-email">Email Address:</label>
-                            <input type="text" className="form-control" id="p-email" name="p-email" defaultValue={user.email} />
-                        </div>
-                        <div className="form-row">
-                            <div className="col">
-                                <div className="form-group">
-                                    <label htmlFor="p-oldPassword">Old Password:</label>
-                                    <input type="text" className="form-control" id="p-oldPassword" name="p-oldPassword" />
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="form-group">
-                                    <label htmlFor="p-newPassword">New Password:</label>
-                                    <input type="text" className="form-control" id="p-newPassword" name="p-newPassword" />
-                                </div>
-                            </div>
-                        </div>
                             <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
+                        </Form>
                     </div>
                     <div className="col-8"></div>
                 </div>
@@ -83,4 +81,34 @@ function DashboardProfile(props) {
     )
 }
 
-export default DashboardProfile
+export default withFormik({
+    mapPropsToValues: ({username, first_name, last_name, email}) => ({
+        username: username || '',
+        first_name: first_name || '',
+        last_name: last_name || '',
+        email: email || ''
+    }),
+    validationSchema: yup.object().shape({
+        username: yup
+            .string()
+            .required('A username is required.'),
+        first_name: yup
+            .string()
+            .required('Your first name is required.'),
+        last_name: yup
+            .string()
+            .required('Your last name is required.'),
+        email: yup
+            .string()
+            .required('Your email is required.'),
+    }),
+    handleSubmit: (values, formikBag) => {
+        axiosWithAuth()
+            .post('http://co-make-3.herokuapp.com/api/auth/login', values)
+            .then(res => {
+                formikBag.setStatus(res.data)
+                formikBag.resetForm()
+            })
+            .catch(err => console.log('Axios: ', err.res))
+    }
+})(DashboardProfile)
