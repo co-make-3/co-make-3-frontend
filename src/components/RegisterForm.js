@@ -98,6 +98,6 @@ export default withFormik({
             formikBag.resetForm()
             formikBag.props.history.push('/login');
         })
-        .catch(err => console.log('Axios: ', err.res))
+        .catch(err => console.log('Axios: ', err))
     }
 })(RegisterForm)
