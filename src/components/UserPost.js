@@ -88,6 +88,6 @@ export default withFormik({
                 formikBag.setStatus(res.data)
                 formikBag.resetForm()
             })
-            .catch(err => console.log('Axios: ', err.res))
+            .catch(err => console.log('Axios: ', err))
     }
 })(UserPost)

@@ -1,9 +1,11 @@
 // Package Imports
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
 
 function Post({ post }) {
+
+    const postID = post.id
 
     if (post.post_image_url === "") {
         post.post_image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-png-6.png"
@@ -16,7 +18,7 @@ function Post({ post }) {
                 <div className="card-title">Posted by: {post.authorUsername}</div>
                 <div className="card-text card-inner">
                     <p className="line-clamp">{post.description}</p>
-                    <p className="read-more"><Link to="#">Read More...</Link></p>
+                    <p className="read-more"><Link to={`/post/${postID}`}>Read More...</Link></p>
                     <div className="card-details">
                         <p><strong>City: </strong>{post.city}</p>
                         <p><strong>Zip Code: </strong>{post.zip_code}</p>

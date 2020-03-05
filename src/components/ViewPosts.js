@@ -7,20 +7,24 @@ import Post from './Post';
 
 function ViewPosts() {
 
-    const [posts, setPosts] = useState([])
-    const [postID, setPostID] = useState('')
+    const [posts, setPosts] = useState([]);
+
+    let sortedPosts = {}
 
     useEffect(() => {
         axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
             .then(res => {
                 console.log(res.data)
-                setPosts(res.data)
+                
+                sortedPosts = res.data.sort(function (a, b) {
+                    return b.votes - a.votes
+                });
+                setPosts(sortedPosts)
             })
     }, [])
 
     return (
         <div className="row">
-            <Route exact path={`/post/${postID}`}></Route>
             <div className="col-12">
 
                 <div className="row page-title">
@@ -30,9 +34,7 @@ function ViewPosts() {
                 </div>
 
                 <div className="row post-wrapper">
-                    {posts.map(
-                        post => <Post key={post.id} post={post} />
-                    )}  
+                    {posts.map(post => <Post post={post}/>)}  
                 </div>
 
             </div>
