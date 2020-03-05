@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 
-function UserPost() {
+function UserPost(props) {
     
     return (
         <div className="row">
@@ -44,6 +44,13 @@ function UserPost() {
                             </div>
                             <div className="form-row m-t-20">
                                 <div className="col">
+                                    {props.touched.description && props.errors.description && (<div className="form-validation alert alert-danger" role="alert">{props.errors.description}</div>)}
+                                    {props.touched.city && props.errors.city && (<div className="form-validation alert alert-danger" role="alert">{props.errors.city}</div>)}
+                                    {props.touched.zip_code && props.errors.zip_code && (<div className="form-validation alert alert-danger" role="alert">{props.errors.zip_code}</div>)}
+                                </div>
+                            </div>
+                            <div className="form-row m-t-20">
+                                <div className="col">
                                     <button type="submit" className="btn btn-primary btn-update">Post</button>
                                 </div>
                             </div>
@@ -77,9 +84,9 @@ export default withFormik({
     handleSubmit: (values, formikBag) => {
         axiosWithAuth().post('http://co-make-3.herokuapp.com/api/posts', values)
             .then(res => {
+                console.log('Post Return Data: ', res.data)
                 formikBag.setStatus(res.data)
                 formikBag.resetForm()
-                //formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })
             .catch(err => console.log('Axios: ', err.res))
     }

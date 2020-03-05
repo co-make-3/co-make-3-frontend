@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 
 function Post({ post }) {
+
+    if (post.post_image_url === "") {
+        post.post_image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-png-6.png"
+    }
     
     return(
         <div className='card post'>

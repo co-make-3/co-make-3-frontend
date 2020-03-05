@@ -26,6 +26,14 @@ function DashboardNav() {
                                     <h1>Welcome</h1>     
                                 </div>
                             </div>
+
+                            <div className="row">
+                                <div className="col-12 content-wrapper">
+                                    <h2>
+                                    We foster communication with the government, community, and public officials to unify and address problems around the neighborhood.
+                                    </h2>
+                                </div>
+                            </div>
             
                         </div>
                     </div>
