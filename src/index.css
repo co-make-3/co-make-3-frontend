@@ -70,6 +70,7 @@ input[type="number"] {
 }
 
 .dashboard-nav {
+  position: fixed;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -203,41 +204,41 @@ label {
 }
 
 .content-wrapper {
-    margin: 40px 0 0 40px;
-    padding: 20px;
-    border: 2px solid #aaa;
-    border-radius: 5px;
+  margin: 40px 0 0 40px;
+  padding: 20px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
 }
 
 label {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 .m-t-20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 table {
-    font-size: 1.8rem;
-    border-radius: 5px;
+  font-size: 1.8rem;
+  border-radius: 5px;
 }
 
 tr {
-    height: 50px;
+  height: 50px;
 }
 
 .table-h-c-1 {
-    width: 5%;
+  width: 5%;
 }
 
 .table-h-c-2 {
-    width: 75%;
+  width: 75%;
 }
 
 .table-h-c-3 {
-    width: 10%;
+  width: 10%;
 }
 
 .table-h-c-4 {
-    width: 10%;
+  width: 10%;
 }
