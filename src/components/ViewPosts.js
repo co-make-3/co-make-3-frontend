@@ -7,8 +7,8 @@ import Post from './Post';
 
 function ViewPosts() {
 
-    const [posts, setPosts] = useState([]);
-    const postID = ""
+    const [posts, setPosts] = useState([])
+    const [postID, setPostID] = useState('')
 
     useEffect(() => {
         axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
@@ -30,7 +30,9 @@ function ViewPosts() {
                 </div>
 
                 <div className="row post-wrapper">
-                    {posts.map(post => <Post post={post}/>)}  
+                    {posts.map(
+                        post => <Post key={post.id} post={post} />
+                    )}  
                 </div>
 
             </div>

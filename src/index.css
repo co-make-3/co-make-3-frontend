@@ -1,305 +1,306 @@
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 .page-wrapper {
-  min-width: 100vw;
-  min-height: 100vh;
-  max-width: 100vw;
-  max-height: 100vh;
-  justify-content: center;
-  align-content: center;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    justify-content: center;
+    align-content: center;
 }
 
 .form-wrapper {
-  max-width: 400px;
+    max-width: 400px;
 }
 
 form {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 
 .form-validation {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .form-title {
-  font-size: 3.2rem;
-  margin-bottom: 60px;
+    font-size: 3.2rem;
+    margin-bottom: 60px;
 }
 
 .form-logo {
-  margin-bottom: 60px;
-  width: 300px;
-  height: auto;
+    margin-bottom: 60px;
+    width: 300px;
+    height: auto;
 }
 
 .btn-alt {
-  margin-top: 40px;
-  font-size: 2rem;
-  padding: 6px 20px;
+    margin-top: 40px;
+    font-size: 2rem;
+    padding: 6px 20px;
 }
 
 .form-group {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
 }
 
 .comp-nav {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .comp-nav a {
-  font-size: 3.4rem;
-  font-weight: 800;
-  color: #333;
-  padding: 0 20px;
-  text-transform: uppercase;
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #333;
+    padding: 0 20px;
+    text-transform: uppercase;
 }
 
 /* Dashboard Specific Styles */
 
 .dashboard-wrapper {
-  display: flex;
-  min-height: 100vh;
-  min-width: 100vw;
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .dashboard-nav {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  width: 300px;
-  height: 100vh;
-  background: rgb(24, 24, 24);
-  background: linear-gradient(0deg, rgba(24, 24, 24, 1) 0%, rgba(39, 39, 39, 1) 100%);
-  color: #eee;
-  font-size: 2rem;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+    height: 100vh;
+    background: rgb(24, 24, 24);
+    background: linear-gradient(0deg, rgba(24, 24, 24, 1) 0%, rgba(39, 39, 39, 1) 100%);
+    color: #eee;
+    font-size: 2rem;
 }
 
 .dashboard-nav .nav {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .dashboard-nav-wrapper-outer,
 .dashboard-nav-wrapper-inner {
-  height: 100%;
+    height: 100%;
 }
 
 .nav {
-  padding-left: 0px;
-  margin-bottom: 0px;
-  list-style: none;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    list-style: none;
 }
 
 .nav ul {
-  display: block;
-  list-style-type: disc;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  padding-inline-start: 40px;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
 .dashboard-nav .nav li {
-  width: 100%;
-  color: rgb(255, 255, 255);
-  margin-left: 20px;
-  margin-bottom: 20px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .dashboard-nav .nav li .active {
-  width: 100%;
-  color: rgb(255, 255, 255);
-  background: rgba(255, 255, 255, 0.23);
-  padding: 10px;
-  border-radius: 10px;
-  margin-right: 20px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.23);
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 20px;
 }
 
-.dashboard-nav .nav li > a {
-  color: rgb(255, 255, 255);
-  text-decoration: none;
+.dashboard-nav .nav li>a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
 }
 
-.nav > li,
-.nav > li > a {
-  position: relative;
-  display: block;
+.nav>li,
+.nav>li>a {
+    position: relative;
+    display: block;
 }
 
 .dashboard-nav .nav a,
-.table > tbody > tr .td-actions .btn {
-  transition: all 0.15s ease-in 0s;
+.table>tbody>tr .td-actions .btn {
+    transition: all 0.15s ease-in 0s;
 }
 
 .dashboard-nav-logo-wrapper {
-  padding: 0 20px 20px 20px;
-  border-bottom: thin solid #525252;
-  top: 0;
-  left: 0;
+    padding: 0 20px 20px 20px;
+    border-bottom: thin solid #525252;
+    top: 0;
+    left: 0;
 }
 
 .logo {
-  width: 220px;
-  height: auto;
+    width: 220px;
+    height: auto;
 }
 
 .dashboard-content {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  min-width: calc(100vw - 300px);
-  max-width: calc(100vw - 300px);
-  height: inherit;
+    margin-left: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-width: calc(100vw - 300px);
+    max-width: calc(100vw - 300px);
+    height: inherit;
 }
 
 .border-red {
-  border: thin solid red;
+    border: thin solid red;
 }
 
 .border-blue {
-  border: thin solid blue;
+    border: thin solid blue;
 }
 
 .page-title {
-  border-bottom: thin solid #aaa;
+    border-bottom: thin solid #aaa;
 }
 
 .btn-update {
-  width: 100%;
-  padding: 10px;
-  font-size: 1.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .profile-wrapper {
-  margin: 40px 0 0 40px;
-  padding: 20px;
-  border: 2px solid #aaa;
-  border-radius: 5px;
+    margin: 40px 0 0 40px;
+    padding: 20px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
 }
 
 label {
-  font-size: 2.2rem;
+    font-size: 2.2rem;
 }
 
 .post {
-  min-width: 300px;
-  min-height: 530px;
-  max-width: 300px;
-  max-height: 530px;
-  border: thin solid #777;
-  border-radius: 5px;
-  margin-bottom: 20px;
+    min-width: 300px;
+    min-height: 530px;
+    max-width: 300px;
+    max-height: 530px;
+    border: thin solid #777;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .post-wrapper {
-  margin: 40px 0 0 40px;
-  padding: 20px;
-  border: 2px solid #aaa;
-  border-radius: 5px;
-  justify-content: space-evenly;
+    margin: 40px 0 0 40px;
+    padding: 20px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    justify-content: space-evenly;
 }
 
 .card-title {
-  font-size: 1.8rem;
+    font-size: 1.8rem;
 }
 
 .card-img-top {
-  max-width: 300px;
-  max-height: 200px;
+    max-width: 300px;
+    max-height: 200px;
 }
 
 .card-inner {
-  padding: 10px;
-  font-size: 1.6rem;
+    padding: 10px;
+    font-size: 1.6rem;
 }
 
 .card-details {
-  position: absolute;
-  bottom: 38px;
-  padding: 6px;
+    position: absolute;
+    bottom: 38px;
+    padding: 6px;
 }
 
 .content-wrapper {
-  margin: 20px;
-  padding: 20px;
-  border: 2px solid #aaa;
-  border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
 }
 
 .btn-upvote {
-  height: 30px;
-  font-size: 1.4rem;
-  font-weight: 700;
+    height: 30px;
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 label {
-  font-size: 2.2rem;
+    font-size: 2.2rem;
 }
 
 .m-t-20 {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 table {
-  font-size: 1.8rem;
-  border-radius: 5px;
+    font-size: 1.8rem;
+    border-radius: 5px;
 }
 
 tr {
-  height: 50px;
+    height: 50px;
 }
 
 .table-h-c-1 {
-  width: 5%;
+    width: 5%;
 }
 
 .table-h-c-2 {
-  width: 75%;
+    width: 75%;
 }
 
 .table-h-c-3 {
-  width: 10%;
+    width: 10%;
 }
 
 .table-h-c-4 {
-  width: 10%;
+    width: 10%;
 }
 
 .truncate-overflow {
-  width: 260px;
-  height: 100px;
-  white-space: wrap;
-  overflow: hidden;
-  display: inline-block;
-  text-overflow: ellipsis;
-  margin: 0;
+    width: 260px;
+    height: 100px;
+    white-space: wrap;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    margin: 0;
 }
 
 .line-clamp {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 .read-more {
-  width: 90%;
-  padding-bottom: 10px;
-  border-bottom: thin solid #777;
+    width: 90%;
+    padding-bottom: 10px;
+    border-bottom: thin solid #777;
 }
 
 .card-img-top {
-  border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
 }
