@@ -25,7 +25,7 @@ function Dashboard(props) {
     
     return (
         <PostContext.Provider value={posts}>
-            <div className="dashboard-wrapper">
+            <div className="row dashboard-wrapper">
                 <DashNav />
                 <DashContent />
             </div>

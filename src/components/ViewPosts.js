@@ -1,6 +1,5 @@
 // Package imports
-import React, { useState, useEffect, useContext } from 'react'
-import { Route } from 'react-router-dom'
+import React, { useContext } from 'react'
 
 import { PostContext } from '../contexts/PostContext';
 
