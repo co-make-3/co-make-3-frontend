@@ -91,7 +91,7 @@ export default withFormik({
             .required('A zip code is required.'),
     }),
     handleSubmit: (values, formikBag) => {
-        axiosWithAuth().post('http://co-make-3.herokuapp.com/api/posts', values)
+        axiosWithAuth().post('https://co-make-3.herokuapp.com/api/posts', values)
             .then(res => {
                 console.log('Post Return Data: ', res.data)
                 formikBag.setStatus(res.data)

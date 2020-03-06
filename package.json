@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
     "formik": "^2.1.4",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
