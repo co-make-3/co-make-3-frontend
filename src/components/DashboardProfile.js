@@ -20,7 +20,7 @@ function DashboardProfile(props) {
 
     useEffect(() => {
         axiosWithAuth()
-            .get(`http://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
+            .get(`https://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
                 setUser(res.data)
                 console.log('User: ', res.data)
@@ -104,7 +104,7 @@ export default withFormik({
     }),
     handleSubmit: (values, formikBag) => {
         axiosWithAuth()
-            .post('http://co-make-3.herokuapp.com/api/auth/login', values)
+            .post('https://co-make-3.herokuapp.com/api/auth/login', values)
             .then(res => {
                 formikBag.setStatus(res.data)
                 formikBag.resetForm()
