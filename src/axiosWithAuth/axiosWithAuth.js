@@ -5,7 +5,9 @@ export const axiosWithAuth = () => {
   return axios.create({
     baseURL: "https://co-make-3.herokuapp.com/",
     headers: {
-      authorization: token
+      authorization: token,
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
     }
   });
 };
