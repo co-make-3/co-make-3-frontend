@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 
-const LoginForm = (props) => {
+const LoginForm = ({ touched, errors, ...props }) => {
 
     console.log(props)
     console.log('LocalStorage - id: ', localStorage.getItem('id'))

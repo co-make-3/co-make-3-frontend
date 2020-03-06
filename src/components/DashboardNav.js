@@ -7,8 +7,6 @@ import DashNavItem from './DashboardNavItem'
 
 function DashboardNav(props) {
 
-    console.log('Props: ', props)
-
     const id = localStorage.getItem('id')
 
     return (
