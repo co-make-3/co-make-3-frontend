@@ -47,7 +47,7 @@ export default withFormik({
     }),
     handleSubmit: (values, formikBag) => {
         axiosWithAuth()
-            .post('http://co-make-3.herokuapp.com/api/auth/login', values)
+            .post('https://co-make-3.herokuapp.com/api/auth/login', values)
             .then(res => {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('id', res.data.id)
