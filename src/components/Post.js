@@ -1,29 +1,11 @@
 // Package Imports
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-=======
 import React, { useState } from 'react';
->>>>>>> 1710e200b6374a91cf7fc207f9ee8d58dad1d497
 import { Link } from 'react-router-dom'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 function Post({ post }) {
 
-<<<<<<< HEAD
-    const id = post.id;
-
-    function handleUpvote() {
-        axiosWithAuth().put(`http://co-make-3.herokuapp.com/api/posts/${id}/increment/votes	`)
-            .then(res => console.log(res));
-    }
-
-    function handleDownvote() {
-        axiosWithAuth().put(`http://co-make-3.herokuapp.com/api/posts/${id}/decrement/votes	`)
-            .then(res => console.log(res));
-    }
-=======
     const postID = post.id
->>>>>>> 1710e200b6374a91cf7fc207f9ee8d58dad1d497
 
     if (post.post_image_url === "") {
         post.post_image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-png-6.png"
@@ -44,11 +26,7 @@ function Post({ post }) {
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <button className="btn btn-primary btn-upvote">Upvote</button>
-=======
-            <a href="#" className="btn btn-primary btn-upvote">Upvote</a>
->>>>>>> 1710e200b6374a91cf7fc207f9ee8d58dad1d497
         </div>
     )
 }
