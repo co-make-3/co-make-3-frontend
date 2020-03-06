@@ -1,27 +1,19 @@
 // Package imports
-import React, { useState, useEffect } from 'react'
-import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
+import React, { useState, useEffect, useContext } from 'react'
 import { Route } from 'react-router-dom'
+
+import { PostContext } from '../contexts/PostContext';
 
 import Post from './Post';
 
 function ViewPosts() {
 
-    const [posts, setPosts] = useState([]);
+    let posts = useContext(PostContext);
+    posts = posts.sort(function (a, b) {
+        return b.votes - a.votes
+    });
 
-    let sortedPosts = {}
-
-    useEffect(() => {
-        axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
-            .then(res => {
-                console.log(res.data)
-                
-                sortedPosts = res.data.sort(function (a, b) {
-                    return b.votes - a.votes
-                });
-                setPosts(sortedPosts)
-            })
-    }, [])
+    const postID = ""
 
     return (
         <div className="row">
@@ -34,7 +26,7 @@ function ViewPosts() {
                 </div>
 
                 <div className="row post-wrapper">
-                    {posts.map(post => <Post post={post}/>)}  
+                    {posts.map((post, index) => <Post key={index} post={post}/>)}  
                 </div>
 
             </div>

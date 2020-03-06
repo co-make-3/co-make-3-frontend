@@ -1,5 +1,5 @@
 // Package imports
-import React from 'react'
+import React, { useState } from 'react'
 import { Route } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 
@@ -10,6 +10,7 @@ import PrivateRoute from './privateRoute/PrivateRoute'
 
 
 function App() {
+
     const location = useLocation()
     const id = localStorage.getItem('id')
 

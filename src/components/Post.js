@@ -1,7 +1,7 @@
 // Package Imports
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 function Post({ post }) {
 
@@ -26,7 +26,7 @@ function Post({ post }) {
                     </div>
                 </div>
             </div>
-            <a href="#" className="btn btn-primary btn-upvote">Upvote</a>
+            <button className="btn btn-primary btn-upvote">Upvote</button>
         </div>
     )
 }
