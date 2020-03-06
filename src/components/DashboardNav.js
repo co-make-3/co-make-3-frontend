@@ -12,7 +12,7 @@ function DashboardNav(props) {
     const id = localStorage.getItem('id')
 
     return (
-        <div className="dashboard-nav">
+        <div className="col dashboard-nav">
             <div className="row dashboard-nav-logo-wrapper">
                 <div className="col">
                     <img className="logo" alt="co-make logo" src="/images/co-make-logo.png" />

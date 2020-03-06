@@ -14,9 +14,11 @@ function Post({ post }) {
     const [votes, setVotes] = useState(post.votes)
 
     function handleUpvote() {
-        axiosWithAuth().post(`https://co-make-3.herokuapp.com/api/posts/${postID}/increment/votes`)
+        axiosWithAuth()
+            .post(`https://co-make-3.herokuapp.com/api/posts/${postID}/increment/votes`)
             .then(res => {
-                axiosWithAuth().get(`https://co-make-3.herokuapp.com/api/posts/${postID}`)
+                axiosWithAuth()
+                    .get(`https://co-make-3.herokuapp.com/api/posts/${postID}`)
                     .then(res => {
                         console.log('res', res)
                         setVotes(res.data.votes);
