@@ -14,9 +14,6 @@ import { PostContext } from '../contexts/PostContext';
 function Dashboard(props) {
 
     const [posts, setPosts] = useState([]);
-    const [postUpvote, setPostUpvote] = useState(posts.map(post => ({postID: post.id, voted: false})));
-
-    console.log(postUpvote);
 
     useEffect(() => {
         axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
