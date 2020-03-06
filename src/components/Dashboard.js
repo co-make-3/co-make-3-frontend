@@ -16,7 +16,7 @@ function Dashboard(props) {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        axiosWithAuth().get('http://co-make-3.herokuapp.com/api/posts')
+        axiosWithAuth().get('https://co-make-3.herokuapp.com/api/posts')
             .then(res => {
                 console.log(res.data)
                 setPosts(res.data)
