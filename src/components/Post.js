@@ -18,7 +18,7 @@ function Post({ post }) {
             .then(res => {
                 axiosWithAuth().get(`https://co-make-3.herokuapp.com/api/posts/${postID}`)
                     .then(res => {
-                        console.log(res)
+                        console.log('res', res)
                         setVotes(res.data.votes);
                     })
             })
@@ -33,6 +33,7 @@ function Post({ post }) {
                     <p className="line-clamp">{post.description}</p>
                     <p className="read-more"><Link to={`/post/${postID}`}>Read More...</Link></p>
                     <div className="card-details">
+                        <p><strong>Author: </strong>{post.authorUsername}</p>
                         <p><strong>City: </strong>{post.city}</p>
                         <p><strong>Zip Code: </strong>{post.zip_code}</p>
                         <p><strong>Votes: </strong>{votes}</p>

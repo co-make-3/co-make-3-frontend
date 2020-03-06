@@ -96,6 +96,7 @@ export default withFormik({
                 console.log('Post Return Data: ', res.data)
                 formikBag.setStatus(res.data)
                 formikBag.resetForm()
+                formikBag.props.history.push(`/dashboard/${localStorage.getItem('id')}/view-posts`)
             })
             .catch(err => console.log('Axios: ', err))
     }
