@@ -92,7 +92,7 @@ export default withFormik({
             password
         }
         axios
-        .post('http://co-make-3.herokuapp.com/api/auth/register', newUser)
+        .post('https://co-make-3.herokuapp.com/api/auth/register', newUser)
         .then(res => {
             formikBag.setStatus(res.data)
             formikBag.resetForm()
