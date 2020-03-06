@@ -42,25 +42,25 @@ function DashboardProfile(props) {
                         <Form> 
                             <div className="form-group">
                                 <label htmlFor="username">Username:</label>
-                                <Field type="text" className="form-control" id="username" name="username" defaultValue={user.username} />
+                                <Field type="text" className="form-control" id="username" name="username" value={user.username} />
                             </div>
                             <div className="form-row">
                                 <div className="col">
                                     <div className="form-group">
                                         <label htmlFor="first_name">First Name:</label>
-                                        <Field type="text" className="form-control" id="first_name" name="first_name" defaultValue={user.first_name} />
+                                        <Field type="text" className="form-control" id="first_name" name="first_name" value={user.first_name} />
                                     </div>
                                 </div>
                                 <div className="col">
                                     <div className="form-group">
                                         <label htmlFor="last_name">Last Name:</label>
-                                        <Field type="text" className="form-control" id="last_name" name="last_name" defaultValue={user.last_name} />
+                                        <Field type="text" className="form-control" id="last_name" name="last_name" value={user.last_name} />
                                     </div>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="email">Email Address:</label>
-                                <Field type="text" className="form-control" id="email" name="email" defaultValue={user.email} />
+                                <Field type="text" className="form-control" id="email" name="email" value={user.email} />
                             </div>
                             
                             <div className="form-row m-t-20">
