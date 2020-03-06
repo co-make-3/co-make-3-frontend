@@ -57,6 +57,6 @@ export default withFormik({
                 formikBag.resetForm()
                 formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })
-            .catch(err => console.log('Axios: ', err.res))
+            .catch(err => console.log('Axios: ', err))
     }
 })(LoginForm)

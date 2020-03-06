@@ -17,7 +17,6 @@ function ViewPosts() {
 
     return (
         <div className="row">
-            <Route exact path={`/post/${postID}`}></Route>
             <div className="col-12">
 
                 <div className="row page-title">
