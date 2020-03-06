@@ -1,6 +1,7 @@
 // Package imports
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 // Component Imports
 import DashboardProfile from './DashboardProfile'

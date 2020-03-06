@@ -154,6 +154,7 @@ input[type="number"] {
 }
 
 .dashboard-content {
+  margin-left: 300px;
   display: flex;
   flex-direction: column;
   padding: 20px;
