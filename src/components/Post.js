@@ -28,7 +28,7 @@ function Post({ post }) {
         <div className='card post'>
             <img className="card-img-top" src={post.post_image_url} alt={'post image'} />
             <div className="card-body">
-                <div className="card-title">Posted by: {post.authorUsername}</div>
+                <div className="card-title"><strong>{post.title}</strong></div>
                 <div className="card-text card-inner">
                     <p className="line-clamp">{post.description}</p>
                     <p className="read-more"><Link to={`/post/${postID}`}>Read More...</Link></p>

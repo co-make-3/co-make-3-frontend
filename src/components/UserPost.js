@@ -19,6 +19,10 @@ function UserPost(props) {
                 <div className="row">
                     <div className="col-4 content-wrapper">
                         <Form>
+                            <div className="form-row">
+                                <label htmlFor="title">Title:</label>
+                                <Field type="text" className="form-control" name="title" id="title" />
+                            </div>
                             <div className="form-group">
                                 <label htmlFor="description">Description:</label>
                                 <Field component="textarea" className="form-control" name="description" id="description" rows="15"></Field>
@@ -44,6 +48,7 @@ function UserPost(props) {
                             </div>
                             <div className="form-row m-t-20">
                                 <div className="col">
+                                    {props.touched.title && props.errors.title && (<div className="form-validation alert alert-danger" role="alert">{props.errors.title}</div>)}
                                     {props.touched.description && props.errors.description && (<div className="form-validation alert alert-danger" role="alert">{props.errors.description}</div>)}
                                     {props.touched.city && props.errors.city && (<div className="form-validation alert alert-danger" role="alert">{props.errors.city}</div>)}
                                     {props.touched.zip_code && props.errors.zip_code && (<div className="form-validation alert alert-danger" role="alert">{props.errors.zip_code}</div>)}
@@ -64,16 +69,20 @@ function UserPost(props) {
 }
 
 export default withFormik({
-    mapPropsToValues: ({ description, city, zip_code, post_image_url }) => ({
+    mapPropsToValues: ({ title, description, city, zip_code, post_image_url }) => ({
+        title: title || '',
         description: description || '',
         city: city || '',
         zip_code: zip_code || '',
         post_image_url: post_image_url || ''
     }),
     validationSchema: yup.object().shape({
+        title: yup
+            .string()
+            .required('A title is required.'),
         description: yup
             .string()
-            .required('A description is required.'),
+            .required('A title is required.'),
         city: yup
             .string()
             .required('A city is required.'),

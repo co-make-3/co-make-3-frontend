@@ -196,9 +196,8 @@ label {
 
 .post {
   min-width: 300px;
-  min-height: 530px;
+  min-height: 600px;
   max-width: 300px;
-  max-height: 530px;
   border: thin solid #777;
   border-radius: 5px;
   margin-bottom: 20px;
