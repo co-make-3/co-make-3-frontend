@@ -6,7 +6,7 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 // Component Imports
 
 
-function DashboardProfile(props) {
+const DashboardProfile = ({ touched, errors, ...props }) => {
 
     const [user, setUser] = useState({
         username: '',

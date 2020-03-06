@@ -14,16 +14,13 @@ import Post from './Post'
 
 
 function DashboardNav() {
-
-    const id = localStorage.getItem('id')
     
+    const id = localStorage.getItem('id')
     let posts = useContext(PostContext)
     
     posts = posts.sort(function (a, b) {
         return b.votes - a.votes
     })
-
-    console.log(`posts: ${posts.length}`, posts)
 
     const [userPosts, setUserPosts] = useState([])
 
@@ -34,8 +31,6 @@ function DashboardNav() {
             } 
         }))
     }, [posts])
-
-    console.log(`userPosts: ${userPosts.length}`, userPosts)
 
     const [user, setUser] = useState({
         username: '',
@@ -81,7 +76,7 @@ function DashboardNav() {
                             </div>
 
                             <div className="row post-wrapper">
-                                {userPosts.map((post, index) => <Post key={index} post={post}/>)}  
+                                {userPosts.map((post, index) => <Post key={index} post={post} />)}  
                             </div>
             
                         </div>

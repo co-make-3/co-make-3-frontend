@@ -5,7 +5,7 @@ import * as yup from 'yup'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
 
-function UserPost(props) {
+const UserPost = ({ touched, errors, ...props }) => {
     
     return (
         <div className="row">
