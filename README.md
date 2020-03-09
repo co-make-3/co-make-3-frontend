@@ -1,4 +1,5 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/57709f18-6b70-4da8-ac17-9ec04d428e93/deploy-status)](https://app.netlify.com/sites/comake2020/deploys)
+https://comake2020.netlify.com
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
