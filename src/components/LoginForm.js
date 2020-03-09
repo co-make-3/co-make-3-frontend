@@ -20,8 +20,8 @@ const LoginForm = ({ touched, errors, ...props }) => {
                     <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <div>
-                    {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
-                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
+                    {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{errors.username}</div>)}
+                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{errors.password}</div>)}
                 </div>
                 <button type="submit" className="btn btn-alt btn-primary">Login</button>
             </Form>
