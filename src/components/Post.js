@@ -1,7 +1,8 @@
 // Package Imports
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
+
 
 function Post({ post }) {
 
@@ -28,7 +29,7 @@ function Post({ post }) {
 
     return(
         <div className='card post'>
-            <img className="card-img-top" src={post.post_image_url} alt={'post image'} />
+            <img className="card-img-top" src={post.post_image_url} alt={'post'} />
             <div className="card-body">
                 <div className="card-title"><strong>{post.title}</strong></div>
                 <div className="card-text card-inner">

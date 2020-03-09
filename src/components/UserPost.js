@@ -48,10 +48,10 @@ const UserPost = ({ touched, errors, ...props }) => {
                             </div>
                             <div className="form-row m-t-20">
                                 <div className="col">
-                                    {props.touched.title && props.errors.title && (<div className="form-validation alert alert-danger" role="alert">{props.errors.title}</div>)}
-                                    {props.touched.description && props.errors.description && (<div className="form-validation alert alert-danger" role="alert">{props.errors.description}</div>)}
-                                    {props.touched.city && props.errors.city && (<div className="form-validation alert alert-danger" role="alert">{props.errors.city}</div>)}
-                                    {props.touched.zip_code && props.errors.zip_code && (<div className="form-validation alert alert-danger" role="alert">{props.errors.zip_code}</div>)}
+                                    {touched.title && errors.title && (<div className="form-validation alert alert-danger" role="alert">{errors.title}</div>)}
+                                    {touched.description && errors.description && (<div className="form-validation alert alert-danger" role="alert">{errors.description}</div>)}
+                                    {touched.city && errors.city && (<div className="form-validation alert alert-danger" role="alert">{errors.city}</div>)}
+                                    {touched.zip_code && errors.zip_code && (<div className="form-validation alert alert-danger" role="alert">{errors.zip_code}</div>)}
                                 </div>
                             </div>
                             <div className="form-row m-t-20">

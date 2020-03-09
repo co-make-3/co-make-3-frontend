@@ -3,17 +3,19 @@ import React, { useEffect, useState } from 'react'
 import { withFormik, Form, Field } from 'formik'
 import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth'
 
-// Component Imports
-
 
 const DashboardProfile = ({ touched, errors, ...props }) => {
 
     const [user, setUser] = useState({
         username: '',
+        password: '',
         first_name: '',
         last_name: '',
-        email: ''
-    });
+        email: '',
+        profile_image_url: ''
+    })
+
+    console.log('user: ', user)
 
     useEffect(() => {
         axiosWithAuth()
@@ -58,8 +60,17 @@ const DashboardProfile = ({ touched, errors, ...props }) => {
                                 <label htmlFor="email">Email Address:</label>
                                 <Field type="text" className="form-control" id="email" name="email" placeholder={user.email} />
                             </div>
-                            <Field type="hidden" name="password" id="password" defaultValue={user.password} />
-                            <Field type="hidden" name="profile_image_url" id="profile_image_url" defaultValue={user.profile_image_url} />
+                            <div className="form-group">
+                                <label htmlFor="password">Password:</label>
+                                <Field type="password" className="form-control" id="password" name="password" />
+                            </div>
+                            <div>
+                                {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
+                                {touched.first_name && errors.first_name && (<div className="form-validation alert alert-danger" role="alert">{props.errors.first_name}</div>)}
+                                {touched.last_name && errors.last_name && (<div className="form-validation alert alert-danger" role="alert">{props.errors.last_name}</div>)}
+                                {touched.email && errors.email && (<div className="form-validation alert alert-danger" role="alert">{props.errors.email}</div>)}
+                                {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
+                            </div>
                             <button type="submit" className="btn btn-primary btn-update">Update My Details</button>
                         </Form>
                     </div>
@@ -71,15 +82,17 @@ const DashboardProfile = ({ touched, errors, ...props }) => {
 }
 
 export default withFormik({
-    mapPropsToValues: ({username, password, first_name, last_name, email, profile_image_url}) => ({
+    enableReinitialize: true,
+    mapPropsToValues: ({ username, password, first_name, last_name, email, profile_image_url }) => ({
         username: username || '',
         password: password || '',
         first_name: first_name || '',
         last_name: last_name || '',
         email: email || '',
-        profile_image_url: profile_image_url || ''
+        profile_image_url: profile_image_url || 'https://img.cartoongoodies.com/wp-content/uploads/2019/11/07152740/Rick-Sanchez-face-778x1024.png'
     }),
     handleSubmit: (values, formikBag) => {
+        console.log('values: ', values)
         axiosWithAuth()
         .put(`https://co-make-3.herokuapp.com/api/users/${localStorage.getItem('id')}`)
             .then(res => {
