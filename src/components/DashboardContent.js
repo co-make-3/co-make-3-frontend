@@ -26,9 +26,11 @@ function DashboardNav() {
 
     useEffect(() => {
         setUserPosts(posts.filter(function (item) {
-            if (item.user_id == id) {
+            if (item.user_id === id) {
                 return item
-            } 
+            }
+
+            return null
         }))
     }, [posts])
 

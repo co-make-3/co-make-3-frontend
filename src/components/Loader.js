@@ -1,3 +1,4 @@
+// Package Imports
 import React from 'react'
 
 
@@ -9,4 +10,4 @@ function Loader() {
     )
 }
 
-export default Loader;
+export default Loader

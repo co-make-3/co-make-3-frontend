@@ -1,5 +1,5 @@
 // Package imports
-import React, { useState } from 'react'
+import React from 'react'
 import { Route } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 

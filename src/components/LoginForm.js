@@ -7,9 +7,6 @@ import { axiosWithAuth } from '../axiosWithAuth/axiosWithAuth';
 
 const LoginForm = ({ touched, errors, ...props }) => {
 
-    console.log(props)
-    console.log('LocalStorage - id: ', localStorage.getItem('id'))
-
     return (
         <div className="text-center">
             <h2 className="form-title">Login</h2>
@@ -23,8 +20,8 @@ const LoginForm = ({ touched, errors, ...props }) => {
                     <Field type="password" className="form-control" id="password" name="password" placeholder="Password" />
                 </div>
                 <div>
-                    {props.touched.username && props.errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
-                    {props.touched.password && props.errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
+                    {touched.username && errors.username && (<div className="form-validation alert alert-danger" role="alert">{props.errors.username}</div>)}
+                    {touched.password && errors.password && (<div className="form-validation alert alert-danger" role="alert">{props.errors.password}</div>)}
                 </div>
                 <button type="submit" className="btn btn-alt btn-primary">Login</button>
             </Form>
@@ -53,7 +50,6 @@ export default withFormik({
                 localStorage.setItem('id', res.data.id)
                 localStorage.setItem('password', values.password)
                 formikBag.setStatus(res.data)
-                //console.log('Res.data: ', res.data)
                 formikBag.resetForm()
                 formikBag.props.history.push(`/dashboard/${res.data.id}`)
             })

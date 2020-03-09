@@ -1,16 +1,20 @@
 // Package imports
 import React, { useContext } from 'react'
 
+// File Imports
 import { PostContext } from '../contexts/PostContext';
 
+// Component Imports
 import Post from './Post';
+
 
 function ViewPosts() {
 
-    let posts = useContext(PostContext);
+    let posts = useContext(PostContext)
+    
     posts = posts.sort(function (a, b) {
         return b.votes - a.votes
-    });
+    })
 
     const postID = ""
 

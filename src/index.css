@@ -22,7 +22,8 @@ form {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+textarea {
     font-size: 1.8rem;
 }
 
